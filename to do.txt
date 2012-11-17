@@ -1,0 +1,39 @@
+ToDo
+=====
+- Hide unimportant settings, e.g "Advanced" button
+
+DONE
+====
+- Change Eula to GPL3 (update name to jayrock)
+- Check what needs to be done to get a certificate => DONE: I need a cert by CA and then derive another cert from it. Leave it for the moment.
+- show correct wssx version info in log file
+- should I use my real name? => No.
+- rename server
+- get correct wssx version info in About tab
+- Change tasklist.xml: LightsOut Element name
+- Check if ftr core service is running and restart if neccessary
+- Change text from "FTR2LO_Vail" to "For The Record\nto Lights-Out"
+- FTR service should not be tried to start if not installed
+- Remove "Computers" tab  
+- Rename "Custom TAB" 
+- Change "Service not installed" to "Not installed"
+- Fixed read of new LO file format
+- Logfile update detection doesn't work
+- Update EULA
+- Change name in Control Panel/Programs and Features from "Server" to FTR2LO Server" 
+- only try to start FTR if it is acutally installed == ROLLED BACK
+- Change Dashboard top level icon
+- insert Info on actual version in "1.5.0.2 required...." ===> Check for FTR version is broken, scan for service fails
+- Create icons showing status
+
+VERIFY
+=======
+
+
+OPEN
+=====
+
+- nicer handling of errors in helpfunctions.read_file and .write_file (remove application.exit)
+
+
+

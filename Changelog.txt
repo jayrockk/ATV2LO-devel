@@ -1,0 +1,21 @@
+0.5.8.3
+- Thanks to multi-threading the Dashboard tab should now open and respond much quicker than before. 
+- Other changes include general stability improvements. Also added more details to the log.
+
+1.0.0.52 (since 0.5.0.83)
+- Whenever a (future) recording is deleted in For The Record, the corresponding entry is also deleted from the Lights-Out calendar.
+- Whenever a (future) recording is changed in For The Record, for instance when the station shifts the show to another time slot, the corresponding entry is also changed in the Lights-Out calendar
+- Automatic check for updated versions of For The Record to Lights-Out. Notification via the WHS 2011 dashboard
+
+
+1.1.0.7
+- Improved handling of situations where FTR is installed on a remote computer
+- Fixed  a bug where some settings were not saved after a change.
+- Actually installed version and API version of FTR2LO are now correctly displayed.
+- More info in log
+
+1.1.0.108
+- Added the option to "Purge old items". When this feature is activated, expired entries will be removed from the Lights-Out calendar.
+- Improved Dashboard GUI, now giving more and clearer information.
+- Enhancements for installations where For The Record is running on a different machine (not Windows Home Server) - now the connections status correctly reported in the dashboard GUI
+- Stability improvements

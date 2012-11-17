@@ -1,0 +1,10 @@
+- Update the helpfile & compile
+- Change versions in Server.wxs
+- Change versions in addin.xml
+- Compile the Visual Studio Projects.
+- Execute 1___ => 2___ => 3____ => 4____
+- Go to the folder '_out\disk1' and release the file *.wssx 
+
+- Install in WHS Console
+- Test new version
+- Uninstall in WHS Console

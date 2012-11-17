@@ -1,0 +1,2 @@
+- Update assemblyinfo.cs in all subproject /properties dirs
+- update "Server\Server.wxs" "TopLevelTab\AddIn.xml"

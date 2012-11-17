@@ -1,0 +1,12 @@
+﻿.Set CompressionType=LZX
+.Set CompressionLevel=7
+.Set ReservePerCabinetSize=0
+.Set Compress=on
+.Set CompressionMemory=21
+.Set Cabinet=ON
+.Set MaxCabinetSize=999999999
+.Set CabinetName1=ATV2LO.wssx
+
+AddIn.xml
+Server.msi
+Eula.rtf
