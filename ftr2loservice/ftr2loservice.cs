@@ -27,7 +27,7 @@ namespace ftr2loservice
 
         private ServiceInstaller m_ThisService;
         private ServiceProcessInstaller m_ThisServiceProcess;
-        public const string ServiceName = "Ftr2LoService";
+        public const string ServiceName = "AtvLoService";
 
         public Ftr2LoServiceInstaller()
         {
@@ -50,7 +50,7 @@ namespace ftr2loservice
     public class Ftr2LoService : ServiceBase
     {
         //initialize Log
-        private string _modulename = "Ftr2LoService";
+        private string _modulename = "atvLoService";
 
         //create and initialize configuration
         public static FTR2LO_Config.FTR2LO_Config config = new FTR2LO_Config.FTR2LO_Config();
@@ -101,7 +101,7 @@ namespace ftr2loservice
         private string get_FTR2LO_version_from_registry()
         {
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            string FTR2LO_name = "For the Record to Lights Out for WHS 2011";
+            string FTR2LO_name = "ArgusTV to Lights Out";
 
             string ret = "unknown";
 

@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FTR2LO_Vail</RootNamespace>
-    <AssemblyName>ATV2LO.TopLevelTab</AssemblyName>
+    <AssemblyName>FTR2LO_Vail.TopLevelTab</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>

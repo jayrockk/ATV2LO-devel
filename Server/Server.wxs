@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="ArgusTV to Lights Out for WHS 2011" Language="1033" Version="1.9.0.2" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
+    <Product Id="8E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="ArgusTV to Lights Out" Language="1033" Version="1.9.0.8" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -33,8 +33,8 @@
                         <File Id="log.dll__INSTALLDIR" Source="..\log\bin\x64\Release\log.dll" DiskId="1" />
                         <File Id="config.dll_INSTALLDIR" Source="..\config\bin\x64\Release\config.dll" DiskId="1" />
                     </Component>
-                    <Component Id="ATV2LO.TopLevelTab.dll" Guid="B5EA3F43-D708-4929-AF9D-E7626E5DCF17" Win64="yes">
-                        <File Id="ATV2LO.TopLevelTab.dll" Source="..\TopLevelTab\bin\x64\Release\ATV2LO.TopLevelTab.dll"
+                    <Component Id="FTR2LO_Vail.TopLevelTab.dll" Guid="B5EA3F43-D708-4929-AF9D-E7626E5DCF17" Win64="yes">
+                        <File Id="FTR2LO_Vail.TopLevelTab.dll" Source="..\TopLevelTab\bin\x64\Release\FTR2LO_Vail.TopLevelTab.dll"
 								  Vital="yes" KeyPath="yes" DiskId="1"/>
                         <File Id="MRG.Controls.UI.dll" Source="..\TopLevelTab\bin\x64\Release\MRG.Controls.UI.dll"
 								  Vital="yes" DiskId="1"/>								  
@@ -63,7 +63,7 @@
         </Directory>
 
         <Feature Id="ProductFeature" Title="Server" Level="1">
-            <ComponentRef Id="ATV2LO.TopLevelTab.dll"/>
+            <ComponentRef Id="FTR2LO_Vail.TopLevelTab.dll"/>
             <ComponentRef Id="ATV2LO.addin"/>
             <ComponentRef Id="ATV2LOService" />
             <ComponentRef Id="ATV2LOcomp" />

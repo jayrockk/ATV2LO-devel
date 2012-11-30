@@ -16,8 +16,8 @@ namespace FTR2LO_Vail
     static class TopLevelTabHelpers
     {
 
-        public const string ServiceName = "Ftr2LoService";
-        public const string FTR_ServiceName = "For The Record Core Services";
+        public const string ServiceName = "AtvLoService";
+        public const string FTR_ServiceName = "ARGUS TV Scheduler";
         public const string LO_ServiceName = "Lights-Out Service";
 
         //public const string AppName = FTR2LO_Config.ConfigFunctions.AppName;
@@ -64,56 +64,6 @@ namespace FTR2LO_Vail
 
         }
 
-      /*  public static bool FTRbyWebRequest(string hostname, string port)
-        {
-            bool ret = false;
-
-            string _uri = "http://" + hostname + ":" + port + "/ForTheRecord/Core/Version";
-            // Create a request using a URL that can receive a post. 
-            WebRequest request = WebRequest.Create(_uri);
-            // Set the Method property of the request to POST.
-            request.Method = "POST";
-            // Create POST data and convert it to a byte array.
-            string postData = "This is a test that posts this string to a Web server.";
-            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
-            // Set the ContentType property of the WebRequest.
-            request.ContentType = "application/x-www-form-urlencoded";
-            // Set the ContentLength property of the WebRequest.
-            request.ContentLength = byteArray.Length;
-            // Get the request stream.
-            try
-            {
-                Stream dataStream = request.GetRequestStream();
-                // Write the data to the request stream.
-                dataStream.Write(byteArray, 0, byteArray.Length);
-                // Close the Stream object.
-                dataStream.Close();
-                // Get the response.
-                WebResponse response = request.GetResponse();
-                // Display the status.
-                Console.WriteLine("Status Description: " + ((HttpWebResponse)response).StatusDescription);
-                // Get the stream containing content returned by the server.
-                dataStream = response.GetResponseStream();
-                // Open the stream using a StreamReader for easy access.
-                StreamReader reader = new StreamReader(dataStream);
-                // Read the content.
-                string responseFromServer = reader.ReadToEnd();
-                ret = true;
-                // Display the content.
-                //Console.WriteLine("Response: " + responseFromServer);
-                // Clean up the streams.
-                reader.Close();
-                dataStream.Close();
-                response.Close();
-            }
-            catch (Exception)
-            {
-                //Console.WriteLine("Exception: " + ex.ToString());
-            }
-            //Console.ReadLine();
-            return ret;
-        }*/
-
         public static void CheckForNewVersion()
         {
             Thread m_checkforupdates = new Thread(new ThreadStart(thread_CheckForNewVersion));
@@ -151,7 +101,7 @@ namespace FTR2LO_Vail
             //
             //Uri latest_version_xml = new Uri("http://for-the-record-to-lights-out.googlecode.com/files/FTR2LO_Vail_latest_version.xml");
             //Uri latest_version_xml = new Uri("https://dl.dropbox.com/u/11034559/FTR2LightsOut/FTR2LO_Vail_latest_version.xml");
-            Uri latest_version_xml = new Uri("https://raw.github.com/jayrockk/for-the-record-to-lights-out-WHS2011/master/FTR2LO_Vail_latest_version.xml");
+            Uri latest_version_xml = new Uri("https://github.com/jayrockk/ArgusTV-to-Lights-Out/blob/master/ATV2LO_latest_version.xml");
             WebClient client = null;
             try
             {
@@ -227,7 +177,7 @@ namespace FTR2LO_Vail
             {
                 var addinMgr = new AddInManager();
                 addinMgr.NewAddInVersionAvailable(
-                   new Guid("0098E620-DA88-476D-9BFC-0F4CE2195E09"), //<Id> from AddIn.xml
+                   new Guid("A098E620-DA88-476D-9BFC-0F4CE2195E09"), //<Id> from AddIn.xml
                    new Version(remote_version_string),
                    new Uri(remote_url),
                    UpdateClassification.Update);
@@ -237,7 +187,7 @@ namespace FTR2LO_Vail
         private static string get_installed_version() //duplicate of get_FTR2LO_version from ftr2loservice
         {
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            string FTR2LO_name = "For the Record to Lights Out for WHS 2011";
+            string FTR2LO_name = "ArgusTV to Lights Out";
 
             string ret = "unknown";
 
