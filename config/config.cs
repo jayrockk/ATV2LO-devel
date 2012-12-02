@@ -92,7 +92,7 @@ namespace FTR2LO_Config
 
     public static class ConfigFunctions
     {
-        private static string _appname = "ATV2LO";
+        private static string _appname = "FTR2LO";
 
         public static string AppName
         {

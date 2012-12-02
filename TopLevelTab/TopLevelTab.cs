@@ -9,15 +9,15 @@ namespace FTR2LO_Vail
     {
         public TopLevelTabPageProvider()
             : base(new Guid("CF68B457-C20E-4311-BF1D-8875B51ED2A4"),
-                   "ArgusTV to Lights-Out",
-                   "ArgusTV to Lights-Out")
+                   "For The Record\nto Lights-Out",
+                   "For The Record to Lights-Out for Vail")
         {
             TopLevelTabHelpers.CheckForNewVersion();
         }
 
         protected override Icon CreateImage()
         {
-            return FTR2LO_Vail.Properties.Resources.icon_ATV2LO;
+            return FTR2LO_Vail.Properties.Resources.FTR2LO_Icon;
         }
 
         protected override object CreatePages()

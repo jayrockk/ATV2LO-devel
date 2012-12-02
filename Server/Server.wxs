@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="8E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="ArgusTV to Lights Out" Language="1033" Version="1.9.0.8" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
+    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="For the Record to Lights Out for WHS 2011" Language="1033" Version="1.1.0.112" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -12,24 +12,24 @@
                         
                         <Directory Id="INSTALLLOCATION_Addins" Name="Addins">
                             <Directory Id="INSTALLLOCATION_Primary" Name="Primary">
-                                <Component Id="ATV2LO.addin" Guid="D26C4C81-DD3D-45C8-ADDF-FFEFF383FB36" Win64="yes">
-                                    <File Id="ATV2LO.addin" Source="..\TopLevelTab\ATV2LO.addin"
+                                <Component Id="FTR2LO_Vail.addin" Guid="D26C4C81-DD3D-45C8-ADDF-FFEFF383FB36" Win64="yes">
+                                    <File Id="FTR2LO_Vail.addin" Source="..\TopLevelTab\FTR2LO_Vail.addin"
 										  Vital="yes" KeyPath="yes" DiskId="1"/>
                                 </Component>
                             </Directory>
                         </Directory>
                     </Directory>
                 </Directory>
-                <Directory Id="INSTALLDIR" Name="ATV2LO">
-                    <Component Id="ATV2LOService" Guid="0556667A-6F14-11DF-8019-B833E0D72085" Win64="yes">
+                <Directory Id="INSTALLDIR" Name="FTR2LO">
+                    <Component Id="FTR2LOService" Guid="0556667A-6F14-11DF-8019-B833E0D72085" Win64="yes">
                         <File Id="ftr2loservice.exe" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe" KeyPath="yes" DiskId="1" />
                         <File Id="ftr2loservice.exe.config" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe.config" DiskId="1" />
-                        <ServiceInstall ErrorControl="normal" Name="ftr2loservice" Start="auto" Type="ownProcess" Description="Monitors ArgusTV and creates entries in LightOut task list." DisplayName="ATV2LO service" Interactive="no" Vital="yes" />
-                        <ServiceControl Id='ATV2LOServiceControl' Name='ftr2loservice' Start='install' Stop='both' Remove='uninstall' />
-                        <File Id="ArgusTV.Client.Common.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.Client.Common.dll" DiskId="1" />
-                        <File Id="ArgusTV.DataContracts.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.DataContracts.dll" DiskId="1" />
-                        <File Id="ArgusTV.ServiceAgents.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.ServiceAgents.dll" DiskId="1" />
-                        <File Id="ArgusTV.ServiceContracts.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.ServiceContracts.dll" DiskId="1" />
+                        <ServiceInstall ErrorControl="normal" Name="ftr2loservice" Start="auto" Type="ownProcess" Description="Monitors For the Record and creates entries in LightOut task list." DisplayName="FTR2LO service" Interactive="no" Vital="yes" />
+                        <ServiceControl Id='FTR2OLServiceControl' Name='ftr2loservice' Start='install' Stop='both' Remove='uninstall' />
+                        <File Id="ForTheRecord.Entities.dll" Source="..\ftr2loservice\bin\x64\Release\ForTheRecord.Entities.dll" DiskId="1" />
+                        <File Id="ForTheRecord.ServiceAgents.dll" Source="..\ftr2loservice\bin\x64\Release\ForTheRecord.ServiceAgents.dll" DiskId="1" />
+                        <File Id="ForTheRecord.ServiceContracts.dll" Source="..\ftr2loservice\bin\x64\Release\ForTheRecord.ServiceContracts.dll" DiskId="1" />
+                        <File Id="ForTheRecord.Client.Common.dll" Source="..\ftr2loservice\bin\x64\Release\ForTheRecord.Client.Common.dll" DiskId="1" />
                         <File Id="log.dll__INSTALLDIR" Source="..\log\bin\x64\Release\log.dll" DiskId="1" />
                         <File Id="config.dll_INSTALLDIR" Source="..\config\bin\x64\Release\config.dll" DiskId="1" />
                     </Component>
@@ -42,8 +42,8 @@
                 </Directory>
             </Directory>
             <Directory Id="CommonAppDataFolder" Name="CommonAppDataFolder">
-                <Directory Id="ATV2LOFolder" Name="ATV2LO">
-                    <Component Id="ATV2LOcomp" Guid="f6bc45e3-af24-4dfa-b894-e1cb8fed67ee">
+                <Directory Id="FTR2LOFolder" Name="FTR2LO">
+                    <Component Id="FTR2LOcomp" Guid="f6bc45e3-af24-4dfa-b894-e1cb8fed67ee">
                         <CreateFolder/>
                     </Component>
                     <Directory Id="logsFolder" Name="logs">
@@ -64,9 +64,11 @@
 
         <Feature Id="ProductFeature" Title="Server" Level="1">
             <ComponentRef Id="FTR2LO_Vail.TopLevelTab.dll"/>
-            <ComponentRef Id="ATV2LO.addin"/>
-            <ComponentRef Id="ATV2LOService" />
-            <ComponentRef Id="ATV2LOcomp" />
+            <!--ComponentRef Id="FTR2LO_Vail.SubTab.dll"/-->
+            <ComponentRef Id="FTR2LO_Vail.addin"/>
+            <!--ComponentRef Id="FTR2LO_Vail_TAB_reference"/-->
+            <ComponentRef Id="FTR2LOService" />
+            <ComponentRef Id="FTR2LOcomp" />
             <ComponentRef Id="logscomp" />
             <ComponentRef Id="configcomp" />
         </Feature>

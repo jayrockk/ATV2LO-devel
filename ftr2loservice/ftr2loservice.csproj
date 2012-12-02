@@ -65,17 +65,21 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArgusTV.Client.Common">
-      <HintPath>References\ArgusTV.Client.Common.dll</HintPath>
+    <Reference Include="ForTheRecord.Client.Common, Version=1.6.0.1, Culture=neutral, PublicKeyToken=a9a5dfc20b8d6175, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ForTheRecord.Client.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ArgusTV.DataContracts">
-      <HintPath>References\ArgusTV.DataContracts.dll</HintPath>
+    <Reference Include="ForTheRecord.Entities, Version=1.6.0.1, Culture=neutral, PublicKeyToken=a9a5dfc20b8d6175, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ForTheRecord.Entities.dll</HintPath>
     </Reference>
-    <Reference Include="ArgusTV.ServiceAgents">
-      <HintPath>References\ArgusTV.ServiceAgents.dll</HintPath>
+    <Reference Include="ForTheRecord.ServiceAgents, Version=1.6.0.1, Culture=neutral, PublicKeyToken=a9a5dfc20b8d6175, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ForTheRecord.ServiceAgents.dll</HintPath>
     </Reference>
-    <Reference Include="ArgusTV.ServiceContracts">
-      <HintPath>References\ArgusTV.ServiceContracts.dll</HintPath>
+    <Reference Include="ForTheRecord.ServiceContracts, Version=1.6.0.1, Culture=neutral, PublicKeyToken=a9a5dfc20b8d6175, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\ForTheRecord.ServiceContracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />

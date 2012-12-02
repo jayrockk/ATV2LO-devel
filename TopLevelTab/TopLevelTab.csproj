@@ -150,11 +150,13 @@
     <Content Include="AddIn.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ATV2LO.addin" />
-    <None Include="Resources\icon_ATV2LO.png" />
-    <None Include="Resources\icon_ATV2LO.ico" />
+    <Content Include="FTR2LO_Vail.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Blank.png" />
     <None Include="Resources\Blank__16x16_72.png" />
+    <None Include="Resources\icon20111021.png" />
+    <None Include="Resources\FTR2LO_Icon.ico" />
     <None Include="Resources\btn_donateCC_LG.gif" />
     <None Include="Resources\CriticalError_16x16_72.png" />
     <None Include="Resources\Complete_OK__16x16_72.png" />

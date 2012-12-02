@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-	<Id>A098E620-DA88-476D-9BFC-0F4CE2195E09</Id>
-	<Version>1.9.0.8</Version>
-	<Name>ArgusTV to Lights-Out</Name>
+	<Id>0098E620-DA88-476D-9BFC-0F4CE2195E09</Id>
+	<Version>1.1.0.112</Version>
+	<Name>For The Record to Lights-Out for Vail</Name>
 	<Allow32BitOn64BitClients>false</Allow32BitOn64BitClients>
 	<MinimumClientOSVersion>5.1</MinimumClientOSVersion>
 	<ServerBinary>
 		<File>
-			<ProductCode>8E1619A4-708B-4FD5-8EF5-504CF39BD6E7</ProductCode>
-			<Version>1.1.0.108</Version>
+			<ProductCode>7E1619A4-708B-4FD5-8EF5-504CF39BD6E7</ProductCode>
+			<Version>1.1.0.112</Version>
 			<Name>Server.msi</Name>
 		</File>
 	</ServerBinary>

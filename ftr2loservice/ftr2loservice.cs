@@ -10,8 +10,8 @@ using System.ServiceModel.Description;
 using System.ServiceProcess;
 using System.Threading;
 using System.Timers;
-using ArgusTV.DataContracts;
-using ArgusTV.ServiceAgents;
+using ForTheRecord.Entities;
+using ForTheRecord.ServiceAgents;
 using FTR2LO_Log;
 using LightsOutCalendarEntry;
 using Microsoft.Win32;
@@ -27,7 +27,7 @@ namespace ftr2loservice
 
         private ServiceInstaller m_ThisService;
         private ServiceProcessInstaller m_ThisServiceProcess;
-        public const string ServiceName = "AtvLoService";
+        public const string ServiceName = "Ftr2LoService";
 
         public Ftr2LoServiceInstaller()
         {
@@ -50,10 +50,12 @@ namespace ftr2loservice
     public class Ftr2LoService : ServiceBase
     {
         //initialize Log
-        private string _modulename = "atvLoService";
+        //public static FTR2LO_Log.FTR2LO_log _log = new FTR2LO_Log.FTR2LO_log();
+        private string _modulename = "Ftr2LoService";
 
         //create and initialize configuration
         public static FTR2LO_Config.FTR2LO_Config config = new FTR2LO_Config.FTR2LO_Config();
+        //public static FTR2LO_Config.ConfigFunctions configfunctions = new FTR2LO_Config.ConfigFunctions();
 
         //prepare Server thread
         private static FTR2LO m_ftr2lo = new FTR2LO();
@@ -76,6 +78,7 @@ namespace ftr2loservice
 
 
             //start background thread
+            //m_StopServer = false;
             m_ftr2loFTR2LOServerThread.IsBackground = true;
 
             try
@@ -101,7 +104,7 @@ namespace ftr2loservice
         private string get_FTR2LO_version_from_registry()
         {
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            string FTR2LO_name = "ArgusTV to Lights Out";
+            string FTR2LO_name = "For the Record to Lights Out for WHS 2011";
 
             string ret = "unknown";
 
@@ -407,7 +410,7 @@ namespace ftr2loservice
 
                 #region get FTR entries
 
-                using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
+                using (TvSchedulerServiceAgent tvssa = new TvSchedulerServiceAgent())
                 {
                     upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
                 }
@@ -562,7 +565,7 @@ namespace ftr2loservice
                 try
                 {
                     ServiceChannelFactories.Initialize(serverSettings, true);
-                    string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
+                    string FTR_version = ForTheRecord.Entities.Constants.ProductVersion;
                     if (success_on_first_attempt)
                     {
                         FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ServiceChannelFactories successfully initialized.");
@@ -575,7 +578,7 @@ namespace ftr2loservice
                     FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "For the Record installed version: " + FTR_version);
                 }
 
-                catch (ArgusTV.DataContracts.ArgusTVException ftrex)
+                catch (ForTheRecordException ftrex)
                 {
                     success_on_first_attempt = false;
                     FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR exception: " + ftrex.Message);
@@ -591,7 +594,7 @@ namespace ftr2loservice
                     System.Threading.Thread.Sleep(RetryDelay);
                 }
             }
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR2LO API version: " + Constants.CurrentApiVersion.ToString());
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR2LO API version: " + Constants.ForTheRecordApiVersion.ToString());
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, PingFTRToString(PingFTR(_forTheRecordServerName, _forTheRecordPort)));
         }
 
@@ -659,9 +662,9 @@ namespace ftr2loservice
                 {
                     InitializeServiceChannelFactories(_forTheRecordServerName, _forTheRecordPort);
                 }
-                using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                using (ForTheRecordServiceAgent iftrs = new ForTheRecordServiceAgent())
                 {
-                    result = iftrs.Ping(Constants.CurrentApiVersion);
+                    result = iftrs.Ping(Constants.ForTheRecordApiVersion);
                 }
             }
 
@@ -751,9 +754,9 @@ namespace ftr2loservice
             try
             {
                 serviceHost.Open();
-                using (ArgusTV.ServiceAgents.CoreServiceAgent agent = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                using (ForTheRecordServiceAgent agent = new ForTheRecordServiceAgent())
                 {
-                    agent.EnsureEventListener(ArgusTV.DataContracts.EventGroup.RecordingEvents, serviceUrl, Constants.EventListenerApiVersion);
+                    agent.EnsureEventListener(ForTheRecordEventGroup.RecordingEvents, serviceUrl, Constants.EventListenerApiVersion);
                 }
                 FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ok.");
             }

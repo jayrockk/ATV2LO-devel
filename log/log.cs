@@ -19,7 +19,7 @@ namespace FTR2LO_Log
         public static int CurrentLogLevel = 0;
 
         private static string filename = "log";
-        private static string appname = "ATV2LO";
+        private static string appname = "FTR2LO";
         //int LogLevel;
 
         public static string Filename
