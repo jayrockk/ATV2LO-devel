@@ -5,7 +5,7 @@
 .Set CompressionMemory=21
 .Set Cabinet=ON
 .Set MaxCabinetSize=999999999
-.Set CabinetName1=FTR2LO_Vail.wssx
+.Set CabinetName1=ATV2LO.wssx
 
 AddIn.xml
 Server.msi
