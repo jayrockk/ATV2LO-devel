@@ -20,8 +20,9 @@
  */
 using System;
 using System.ServiceModel;
-using ForTheRecord.Client.Common;
-using ForTheRecord.ServiceContracts.Events;
+using ArgusTV.Client.Common;
+using ArgusTV.ServiceContracts.Events;
+using ArgusTV.DataContracts;
 using FTR2LO_Log;
 
 namespace ftr2loservice
@@ -74,7 +75,7 @@ ConcurrencyMode = ConcurrencyMode.Single,
             }
         }
 
-        public override void RecordingStarted(ForTheRecord.Entities.Recording recording)
+        public override void RecordingStarted(ArgusTV.DataContracts.Recording recording)
         {
             if (_ftr2lo != null)
             {
@@ -82,7 +83,7 @@ ConcurrencyMode = ConcurrencyMode.Single,
             }
         }
 
-        public override void RecordingEnded(ForTheRecord.Entities.Recording recording)
+        public override void RecordingEnded(ArgusTV.DataContracts.Recording recording)
         {
             if (_ftr2lo != null)
             {

@@ -10,8 +10,8 @@ using System.ServiceModel.Description;
 using System.ServiceProcess;
 using System.Threading;
 using System.Timers;
-using ForTheRecord.Entities;
-using ForTheRecord.ServiceAgents;
+using ArgusTV.DataContracts;
+using ArgusTV.ServiceAgents;
 using FTR2LO_Log;
 using LightsOutCalendarEntry;
 using Microsoft.Win32;
@@ -37,7 +37,7 @@ namespace ftr2loservice
             m_ThisServiceProcess.Account = ServiceAccount.LocalSystem;
             m_ThisService.ServiceName = ServiceName;
             m_ThisService.StartType = ServiceStartMode.Automatic;
-            m_ThisService.ServicesDependedOn = new string[] { "For The Record Core Services" };
+            //m_ThisService.ServicesDependedOn = new string[] { "For The Record Core Services" };
 
 
             Installers.Add(m_ThisService);
@@ -410,7 +410,7 @@ namespace ftr2loservice
 
                 #region get FTR entries
 
-                using (TvSchedulerServiceAgent tvssa = new TvSchedulerServiceAgent())
+                using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
                 {
                     upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
                 }
@@ -565,7 +565,7 @@ namespace ftr2loservice
                 try
                 {
                     ServiceChannelFactories.Initialize(serverSettings, true);
-                    string FTR_version = ForTheRecord.Entities.Constants.ProductVersion;
+                    string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
                     {
                         FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ServiceChannelFactories successfully initialized.");
@@ -578,10 +578,10 @@ namespace ftr2loservice
                     FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "For the Record installed version: " + FTR_version);
                 }
 
-                catch (ForTheRecordException ftrex)
+                catch (ArgusTV.DataContracts.ArgusTVException atvex)
                 {
                     success_on_first_attempt = false;
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR exception: " + ftrex.Message);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ATV exception: " + atvex.Message);
                     FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Retrying in " + (RetryDelay / 1000).ToString() + " seconds....");
                     System.Threading.Thread.Sleep(RetryDelay);
                 }
@@ -594,7 +594,7 @@ namespace ftr2loservice
                     System.Threading.Thread.Sleep(RetryDelay);
                 }
             }
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR2LO API version: " + Constants.ForTheRecordApiVersion.ToString());
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR2LO API version: " + Constants.CurrentApiVersion.ToString());
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, PingFTRToString(PingFTR(_forTheRecordServerName, _forTheRecordPort)));
         }
 
@@ -662,9 +662,9 @@ namespace ftr2loservice
                 {
                     InitializeServiceChannelFactories(_forTheRecordServerName, _forTheRecordPort);
                 }
-                using (ForTheRecordServiceAgent iftrs = new ForTheRecordServiceAgent())
+                using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
                 {
-                    result = iftrs.Ping(Constants.ForTheRecordApiVersion);
+                    result = iftrs.Ping(Constants.CurrentApiVersion);
                 }
             }
 
@@ -754,9 +754,9 @@ namespace ftr2loservice
             try
             {
                 serviceHost.Open();
-                using (ForTheRecordServiceAgent agent = new ForTheRecordServiceAgent())
+                using (ArgusTV.ServiceAgents.CoreServiceAgent agent = new ArgusTV.ServiceAgents.CoreServiceAgent())
                 {
-                    agent.EnsureEventListener(ForTheRecordEventGroup.RecordingEvents, serviceUrl, Constants.EventListenerApiVersion);
+                    agent.EnsureEventListener(ArgusTV.DataContracts.EventGroup.RecordingEvents, serviceUrl, Constants.EventListenerApiVersion);
                 }
                 FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ok.");
             }
