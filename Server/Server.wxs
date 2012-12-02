@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="For the Record to Lights Out for WHS 2011" Language="1033" Version="1.1.0.120" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
+    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="Argus TV to Lights Out" Language="1033" Version="1.1.0.123" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -24,8 +24,8 @@
                     <Component Id="FTR2LOService" Guid="0556667A-6F14-11DF-8019-B833E0D72085" Win64="yes">
                         <File Id="ftr2loservice.exe" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe" KeyPath="yes" DiskId="1" />
                         <File Id="ftr2loservice.exe.config" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe.config" DiskId="1" />
-                        <ServiceInstall ErrorControl="normal" Name="ftr2loservice" Start="auto" Type="ownProcess" Description="Monitors For the Record and creates entries in LightOut task list." DisplayName="FTR2LO service" Interactive="no" Vital="yes" />
-                        <ServiceControl Id='FTR2OLServiceControl' Name='ftr2loservice' Start='install' Stop='both' Remove='uninstall' />
+                        <ServiceInstall ErrorControl="normal" Name="ATV2LoService" Start="auto" Type="ownProcess" Description="Monitors Argus TV and creates entries in LightOut task list." DisplayName="Argus TV to Lights-Out service" Interactive="no" Vital="yes" />
+                        <ServiceControl Id='ATV2LOServiceControl' Name='ATV2LoService' Start='install' Stop='both' Remove='uninstall' />
                         <File Id="ArgusTV.Client.Common.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.Client.Common.dll" DiskId="1" />
                         <File Id="ArgusTV.DataContracts.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.DataContracts.dll" DiskId="1" />
                         <File Id="ArgusTV.ServiceAgents.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.ServiceAgents.dll" DiskId="1" />

@@ -27,7 +27,7 @@ namespace ftr2loservice
 
         private ServiceInstaller m_ThisService;
         private ServiceProcessInstaller m_ThisServiceProcess;
-        public const string ServiceName = "Ftr2LoService";
+        public const string ServiceName = "ATV2LoService";
 
         public Ftr2LoServiceInstaller()
         {
