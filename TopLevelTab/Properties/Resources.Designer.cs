@@ -163,19 +163,10 @@ namespace FTR2LO_Vail.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon20111021 {
+        internal static System.Drawing.Bitmap icon_ATV2LO1 {
             get {
-                object obj = ResourceManager.GetObject("icon20111021", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_ATV2LO1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die blablabl ähnelt.
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

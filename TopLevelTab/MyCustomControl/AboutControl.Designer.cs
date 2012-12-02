@@ -61,16 +61,16 @@
             // label_Name
             // 
             this.label_Name.AutoSize = true;
-            this.label_Name.Location = new System.Drawing.Point(75, 19);
+            this.label_Name.Location = new System.Drawing.Point(89, 19);
             this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(141, 13);
+            this.label_Name.Size = new System.Drawing.Size(111, 13);
             this.label_Name.TabIndex = 2;
-            this.label_Name.Text = "For the Record to Lights-Out";
+            this.label_Name.Text = "ArgusTV to Lights-Out";
             // 
             // label_Description
             // 
             this.label_Description.AutoSize = true;
-            this.label_Description.Location = new System.Drawing.Point(75, 56);
+            this.label_Description.Location = new System.Drawing.Point(89, 56);
             this.label_Description.Name = "label_Description";
             this.label_Description.Size = new System.Drawing.Size(88, 13);
             this.label_Description.TabIndex = 2;
@@ -88,7 +88,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(75, 90);
+            this.linkLabel1.Location = new System.Drawing.Point(89, 84);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(95, 13);
             this.linkLabel1.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(19, 19);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -122,7 +122,7 @@
             // label_Version
             // 
             this.label_Version.AutoSize = true;
-            this.label_Version.Location = new System.Drawing.Point(75, 37);
+            this.label_Version.Location = new System.Drawing.Point(89, 37);
             this.label_Version.Name = "label_Version";
             this.label_Version.Size = new System.Drawing.Size(70, 13);
             this.label_Version.TabIndex = 2;

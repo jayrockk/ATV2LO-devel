@@ -19,17 +19,17 @@ namespace FTR2LO_Vail
 
         private void AboutControl_Load(object sender, EventArgs e)
         {
-            label_Name.Text = "For the Record to Lights-Out";
+            label_Name.Text = "Argus TV to Lights-Out";
 
             label_Version.Text = "Version " + get_FTR2LO_version();
 
-            label_Description.Text = "Connects For the Record and Lights-Out and wakes\nyour Windows Home Server for TV recordings.";
+            label_Description.Text = "Connects ArgusTV and Lights-Out and wakes\nyour Windows Server for TV recordings.";
             
-            label_Donation.Text = "For the Record to Lights-Out\nis freeware -\nplease support the development!";
+            label_Donation.Text = "ArgusTV to Lights-Out\nis freeware -\nplease support the development!";
 
             pictureBox1.Image = FTR2LO_Vail.Properties.Resources.btn_donateCC_LG;
 
-            pictureBox2.Image = FTR2LO_Vail.Properties.Resources.icon20111021;
+            pictureBox2.Image = FTR2LO_Vail.Properties.Resources.icon_ATV2LO1;
 
             //Version 1: Load the image from the internet
             //string URL = "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif";
@@ -47,7 +47,7 @@ namespace FTR2LO_Vail
             
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        /*private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GDYUJ9NCTCYP4
 
@@ -61,12 +61,12 @@ namespace FTR2LO_Vail
 
               
              */
-        }
+        }*/
 
         private string get_FTR2LO_version()
         {
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            string FTR2LO_name = "For the Record to Lights Out for WHS 2011";
+            string FTR2LO_name = "Argus TV to Lights Out";
 
             string ret = "unknown";
 

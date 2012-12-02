@@ -104,7 +104,7 @@ namespace ftr2loservice
         private string get_FTR2LO_version_from_registry()
         {
             string uninstallKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            string FTR2LO_name = "For the Record to Lights Out for WHS 2011";
+            string FTR2LO_name = "Argus TV to Lights Out";
 
             string ret = "unknown";
 

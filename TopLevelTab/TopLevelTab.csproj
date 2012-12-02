@@ -153,6 +153,7 @@
     <Content Include="FTR2LO_Vail.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icon_ATV2LO.png" />
     <None Include="Resources\icon_ATV2LO.ico" />
     <None Include="Resources\Blank.png" />
     <None Include="Resources\Blank__16x16_72.png" />
