@@ -1,13 +1,17 @@
 Move to ATV
 ========
-- Change name in dashboard/addins
-- Change name of WSSX file - in 4__rename_package.bat and package.ddf
+- Change name in dashboard/addins -- addin.xml
 - Change service name
 - Change versions to 2.0
+- Change GUID for product
 
 ToDo
 =====
 - Hide unimportant settings, e.g "Advanced" button
+
+Move to ATV -- DONE
+==================
+- Change name of WSSX file - in 4__rename_package.bat and package.ddf
 
 DONE
 ====
