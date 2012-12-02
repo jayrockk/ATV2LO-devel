@@ -271,7 +271,7 @@ namespace ftr2loservice
 
             string service_status_ftr = GetWindowsServiceStatus(Convert.ToString(appsettingsreader.GetValue("FTRservicename", String.Empty.GetType())));
             string service_status_ftr_old = "";
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "For The Record Service status: " + service_status_ftr);
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Argus TV Service status: " + service_status_ftr);
 
             //Loop and wait until FTR services is running
             int countdown = 30;
@@ -299,7 +299,7 @@ namespace ftr2loservice
                 {
                     counter = countdown;
                     TimeSpan timeout = TimeSpan.FromMilliseconds(60 * 1000);
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Trying to start For The Record Service ....");
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Trying to start Argus TV Service ....");
                     ServiceController FTRservicecontroller = new ServiceController(Convert.ToString(appsettingsreader.GetValue("FTRservicename", String.Empty.GetType())));
                     try
                     {
@@ -308,7 +308,7 @@ namespace ftr2loservice
                     }
                     catch (Exception ex)
                     {
-                        FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Exception starting For The Record Service\n" + ex.ToString());
+                        FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Exception starting Argus TV Service\n" + ex.ToString());
                     }
                     finally
                     {
@@ -323,7 +323,7 @@ namespace ftr2loservice
                 // check if status of FTR has changed and if so, update log file
                 if (!(service_status_ftr == service_status_ftr_old))
                 {
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "For The Record Service status: " + service_status_ftr);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, "Argus TV Service status: " + service_status_ftr);
                 }
 
             }
@@ -575,7 +575,7 @@ namespace ftr2loservice
                         FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ServiceChannelFactories are now initialized.");
                     }
                     success = true;
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "For the Record installed version: " + FTR_version);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Argus TV installed version: " + FTR_version);
                 }
 
                 catch (ArgusTV.DataContracts.ArgusTVException atvex)

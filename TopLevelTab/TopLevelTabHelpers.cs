@@ -151,7 +151,7 @@ namespace FTR2LO_Vail
             //
             //Uri latest_version_xml = new Uri("http://for-the-record-to-lights-out.googlecode.com/files/FTR2LO_Vail_latest_version.xml");
             //Uri latest_version_xml = new Uri("https://dl.dropbox.com/u/11034559/FTR2LightsOut/FTR2LO_Vail_latest_version.xml");
-            Uri latest_version_xml = new Uri("https://raw.github.com/jayrockk/for-the-record-to-lights-out-WHS2011/master/FTR2LO_Vail_latest_version.xml");
+            Uri latest_version_xml = new Uri("https://raw.github.com/jayrockk/ArgusTV-to-Lights-Out/master/ATV2LO_latest_version.xml");
             WebClient client = null;
             try
             {
