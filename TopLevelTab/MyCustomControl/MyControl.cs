@@ -577,6 +577,11 @@ namespace FTR2LO_Vail
             return valid;
         }
 
+        private void label_FTR2LO_service_status_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*public static bool IsValidNaturalNumber(string s, int lower_limit, int upper_limit, string title)
         {
             bool valid = false;

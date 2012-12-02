@@ -127,7 +127,7 @@
             this.numericUpDown_EarlyStart.Size = new System.Drawing.Size(45, 20);
             this.numericUpDown_EarlyStart.TabIndex = 35;
             this.toolTip1.SetToolTip(this.numericUpDown_EarlyStart, "If you want the computer to wake up some minutes before the recording, set it her" +
-        "e.");
+                    "e.");
             this.numericUpDown_EarlyStart.Leave += new System.EventHandler(this.numericUpDown_EarlyStart_Leave);
             // 
             // numericUpDown_ServerPort
@@ -161,7 +161,7 @@
             this.textBox_ServerName.Size = new System.Drawing.Size(55, 20);
             this.textBox_ServerName.TabIndex = 33;
             this.toolTip1.SetToolTip(this.textBox_ServerName, "Host name or IP address of the computer that runs For the Record. If FTR2LO is ru" +
-        "nning on the same computer, set this to \"localhost\". ");
+                    "nning on the same computer, set this to \"localhost\". ");
             this.textBox_ServerName.Leave += new System.EventHandler(this.textBox_ServerName_Leave_1);
             // 
             // label_ServerPort
@@ -170,9 +170,9 @@
             this.label_ServerPort.BackColor = System.Drawing.Color.Transparent;
             this.label_ServerPort.Location = new System.Drawing.Point(6, 51);
             this.label_ServerPort.Name = "label_ServerPort";
-            this.label_ServerPort.Size = new System.Drawing.Size(50, 13);
+            this.label_ServerPort.Size = new System.Drawing.Size(26, 13);
             this.label_ServerPort.TabIndex = 31;
-            this.label_ServerPort.Text = "FTR Port";
+            this.label_ServerPort.Text = "Port";
             // 
             // label_ServerName
             // 
@@ -180,9 +180,9 @@
             this.label_ServerName.BackColor = System.Drawing.Color.Transparent;
             this.label_ServerName.Location = new System.Drawing.Point(6, 26);
             this.label_ServerName.Name = "label_ServerName";
-            this.label_ServerName.Size = new System.Drawing.Size(62, 13);
+            this.label_ServerName.Size = new System.Drawing.Size(38, 13);
             this.label_ServerName.TabIndex = 32;
-            this.label_ServerName.Text = "FTR Server";
+            this.label_ServerName.Text = "Server";
             // 
             // button_Defaults
             // 
@@ -226,7 +226,7 @@
             this.groupBox2.Size = new System.Drawing.Size(519, 80);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "For The Record Server";
+            this.groupBox2.Text = "Argus TV Server";
             // 
             // groupBox3
             // 
@@ -335,9 +335,9 @@
             this.label_ForTheRecord_service_status.Font = new System.Drawing.Font("Tahoma", 8F);
             this.label_ForTheRecord_service_status.Location = new System.Drawing.Point(221, 51);
             this.label_ForTheRecord_service_status.Name = "label_ForTheRecord_service_status";
-            this.label_ForTheRecord_service_status.Size = new System.Drawing.Size(85, 13);
+            this.label_ForTheRecord_service_status.Size = new System.Drawing.Size(50, 13);
             this.label_ForTheRecord_service_status.TabIndex = 22;
-            this.label_ForTheRecord_service_status.Text = "For The Record:";
+            this.label_ForTheRecord_service_status.Text = "Argus TV";
             // 
             // label_FTR2LO_service_status
             // 
@@ -348,7 +348,8 @@
             this.label_FTR2LO_service_status.Name = "label_FTR2LO_service_status";
             this.label_FTR2LO_service_status.Size = new System.Drawing.Size(49, 13);
             this.label_FTR2LO_service_status.TabIndex = 20;
-            this.label_FTR2LO_service_status.Text = "FTR2LO:";
+            this.label_FTR2LO_service_status.Text = "ATV2LO:";
+            this.label_FTR2LO_service_status.Click += new System.EventHandler(this.label_FTR2LO_service_status_Click);
             // 
             // groupBox1
             // 
@@ -377,7 +378,7 @@
             this.groupBox6.Size = new System.Drawing.Size(519, 80);
             this.groupBox6.TabIndex = 42;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "FTR2LO settings";
+            this.groupBox6.Text = "ATV2LO settings";
             // 
             // label_PurgeOldItems
             // 
