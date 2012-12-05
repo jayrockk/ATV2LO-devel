@@ -47,8 +47,8 @@ namespace FTR2LO_Vail
             
         }
 
-        /*private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        //private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
             //https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GDYUJ9NCTCYP4
 
             /*button html
@@ -61,7 +61,7 @@ namespace FTR2LO_Vail
 
               
              */
-        }*/
+        //}
 
         private string get_FTR2LO_version()
         {

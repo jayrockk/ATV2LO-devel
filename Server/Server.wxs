@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.2" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
+    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.3" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />

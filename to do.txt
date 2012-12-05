@@ -1,18 +1,19 @@
 Move to ATV
 ========
-- Change versions to 2.0
 - Change GUID for product
-- Change About tab
+
 
 ToDo
 =====
 - Hide unimportant settings, e.g "Advanced" button
+- Change About tab
 
 Move to ATV -- DONE
 ==================
 - Change name of WSSX file - in 4__rename_package.bat and package.ddf
 - Change name in dashboard/addins -- addin.xml
 - Change service name
+- Change versions to 2.0
 
 DONE
 ====
