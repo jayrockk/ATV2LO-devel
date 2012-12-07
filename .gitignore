@@ -27,3 +27,5 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 _out/
+*.msi
+*.wssx

@@ -158,7 +158,6 @@
     <None Include="Resources\Blank.png" />
     <None Include="Resources\Blank__16x16_72.png" />
     <None Include="Resources\icon20111021.png" />
-    <None Include="Resources\FTR2LO_Icon.ico" />
     <None Include="Resources\btn_donateCC_LG.gif" />
     <None Include="Resources\CriticalError_16x16_72.png" />
     <None Include="Resources\Complete_OK__16x16_72.png" />

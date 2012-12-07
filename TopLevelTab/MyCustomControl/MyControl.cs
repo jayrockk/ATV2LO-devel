@@ -196,11 +196,17 @@ namespace FTR2LO_Vail
             int _status = -3;
             string _FTRStatus = "Unknown (1)";
             string _address = "http://localhost:41432/WCFService1/FTR2LO_InternalService";
-            System.ServiceModel.WSHttpBinding binding = new System.ServiceModel.WSHttpBinding();
-            binding.Name = "WSHttpBinding_IFTR2LO"; // not sure if this is necessary.
-            System.ServiceModel.EndpointAddress endpointAddress = new System.ServiceModel.EndpointAddress(_address);
-            FTR2LOClient client = null;
-
+            try
+            {
+                System.ServiceModel.WSHttpBinding binding = new System.ServiceModel.WSHttpBinding();
+                binding.Name = "WSHttpBinding_IFTR2LO"; // not sure if this is necessary.
+                System.ServiceModel.EndpointAddress endpointAddress = new System.ServiceModel.EndpointAddress(_address);
+                FTR2LOClient client = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A really crazy exception has occured:\n" + ex.ToString());
+            }
             try
             {
                 client = new FTR2LOClient(binding, endpointAddress);
