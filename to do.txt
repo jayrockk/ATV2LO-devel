@@ -1,7 +1,8 @@
 Move to ATV
 ========
 - Change GUID for product
-
+- change log name to ATV2LO
+- check "restart service"
 
 ToDo
 =====

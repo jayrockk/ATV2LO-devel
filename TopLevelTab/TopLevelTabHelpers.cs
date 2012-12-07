@@ -16,8 +16,8 @@ namespace FTR2LO_Vail
     static class TopLevelTabHelpers
     {
 
-        public const string ServiceName = "Ftr2LoService";
-        public const string FTR_ServiceName = "For The Record Core Services";
+        public const string ServiceName = "ATV2LoService";
+        //public const string FTR_ServiceName = "For The Record Core Services";
         public const string LO_ServiceName = "Lights-Out Service";
 
         //public const string AppName = FTR2LO_Config.ConfigFunctions.AppName;
