@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.20" Manufacturer="jayrock" UpgradeCode="3d0e247f-264a-4335-b2b7-8954ae64db30">
+    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.21" Manufacturer="jayrock" UpgradeCode="3d0e247f-264a-4335-b2b7-8954ae64db30">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -25,7 +25,7 @@
                         <File Id="ftr2loservice.exe" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe" KeyPath="yes" DiskId="1" />
                         <File Id="ftr2loservice.exe.config" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe.config" DiskId="1" />
                         <ServiceInstall ErrorControl="normal" Name="ATV2LoService" Start="auto" Type="ownProcess" Description="Monitors Argus TV and creates entries in LightOut task list." DisplayName="Argus TV to Lights-Out service" Interactive="no" Vital="yes" />
-                        <ServiceControl Id='ATV2LOServiceControl' Name='ATV2LoService' Start='install' Stop='both' Remove='uninstall' />
+                        <ServiceControl Id='ATV2LOServiceControl' Name='ATV2LoService' Start='install' Stop='both' Remove='uninstall' Wait='yes' />
                         <File Id="ArgusTV.Client.Common.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.Client.Common.dll" DiskId="1" />
                         <File Id="ArgusTV.DataContracts.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.DataContracts.dll" DiskId="1" />
                         <File Id="ArgusTV.ServiceAgents.dll" Source="..\ftr2loservice\bin\x64\Release\ArgusTV.ServiceAgents.dll" DiskId="1" />
