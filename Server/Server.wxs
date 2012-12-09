@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.9" Manufacturer="jayrock" UpgradeCode="25cfc075-9016-43b5-b3ed-ca67b0d1a35c">
+    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.20" Manufacturer="jayrock" UpgradeCode="3d0e247f-264a-4335-b2b7-8954ae64db30">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -12,7 +12,7 @@
                         
                         <Directory Id="INSTALLLOCATION_Addins" Name="Addins">
                             <Directory Id="INSTALLLOCATION_Primary" Name="Primary">
-                                <Component Id="ATV2LO_Vail.addin" Guid="00ed11bb-b017-4494-9ead-e38d7e1245a8" Win64="yes">
+                                <Component Id="ATV2LO_Vail.addin" Guid="8c376bc2-2b0a-4c16-b56b-1188c1e97c28" Win64="yes">
                                     <File Id="ATV2LO_Vail.addin" Source="..\TopLevelTab\ATV2LO_Vail.addin"
 										  Vital="yes" KeyPath="yes" DiskId="1"/>
                                 </Component>
@@ -21,7 +21,7 @@
                     </Directory>
                 </Directory>
                 <Directory Id="INSTALLDIR" Name="ATV2LO">
-                    <Component Id="FTR2LOService" Guid="0556667A-6F14-11DF-8019-B833E0D72085" Win64="yes">
+                    <Component Id="FTR2LOService" Guid="4d9da576-e464-4a5c-b007-793f7f7b1d06" Win64="yes">
                         <File Id="ftr2loservice.exe" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe" KeyPath="yes" DiskId="1" />
                         <File Id="ftr2loservice.exe.config" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe.config" DiskId="1" />
                         <ServiceInstall ErrorControl="normal" Name="ATV2LoService" Start="auto" Type="ownProcess" Description="Monitors Argus TV and creates entries in LightOut task list." DisplayName="Argus TV to Lights-Out service" Interactive="no" Vital="yes" />
@@ -33,8 +33,8 @@
                         <File Id="log.dll__INSTALLDIR" Source="..\log\bin\x64\Release\log.dll" DiskId="1" />
                         <File Id="config.dll_INSTALLDIR" Source="..\config\bin\x64\Release\config.dll" DiskId="1" />
                     </Component>
-                    <Component Id="FTR2LO_Vail.TopLevelTab.dll" Guid="B5EA3F43-D708-4929-AF9D-E7626E5DCF17" Win64="yes">
-                        <File Id="FTR2LO_Vail.TopLevelTab.dll" Source="..\TopLevelTab\bin\x64\Release\FTR2LO_Vail.TopLevelTab.dll"
+                    <Component Id="ATV2LO.TopLevelTab.dll" Guid="5fc66541-aede-455c-bec5-33b14857af73" Win64="yes">
+                        <File Id="ATV2LO.TopLevelTab.dll" Source="..\TopLevelTab\bin\x64\Release\ATV2LO.TopLevelTab.dll"
 								  Vital="yes" KeyPath="yes" DiskId="1"/>
                         <File Id="MRG.Controls.UI.dll" Source="..\TopLevelTab\bin\x64\Release\MRG.Controls.UI.dll"
 								  Vital="yes" DiskId="1"/>								  
@@ -43,17 +43,17 @@
             </Directory>
             <Directory Id="CommonAppDataFolder" Name="CommonAppDataFolder">
                 <Directory Id="ATV2LOFolder" Name="ATV2LO">
-                    <Component Id="ATV2LOcomp" Guid="13d718b1-8ee9-488d-9a92-9cf88b33a3be">
+                    <Component Id="ATV2LOcomp" Guid="881b0f5d-a551-4da2-8f7d-7c0f4dc4ef17">
                         <CreateFolder/>
                     </Component>
                     <Directory Id="logsFolder" Name="logs">
-                        <Component Id="logscomp" Guid="615f24fd-e110-45e6-9f90-14e827bf265a">
+                        <Component Id="logscomp" Guid="94de0845-e412-49a6-9006-f8eefbdc2969">
                             <CreateFolder/>
                             <RemoveFile Id="PurgelogsFolder" Name="*.*" On="uninstall" />
                         </Component>
                     </Directory>
                     <Directory Id="configFolder" Name="config">
-                        <Component Id="configcomp" Guid="ade68646-2a44-4065-b65b-9caae3737228">
+                        <Component Id="configcomp" Guid="259984ba-8248-412f-877b-c12c9b62d0ad">
                             <CreateFolder/>
                             <RemoveFile Id="PurgeConfigFolder" Name="*.*" On="uninstall" />
                         </Component>
@@ -63,7 +63,7 @@
         </Directory>
 
         <Feature Id="ProductFeature" Title="Server" Level="1">
-            <ComponentRef Id="FTR2LO_Vail.TopLevelTab.dll"/>
+            <ComponentRef Id="ATV2LO.TopLevelTab.dll"/>
             <!--ComponentRef Id="FTR2LO_Vail.SubTab.dll"/-->
             <ComponentRef Id="ATV2LO_Vail.addin"/>
             <!--ComponentRef Id="FTR2LO_Vail_TAB_reference"/-->

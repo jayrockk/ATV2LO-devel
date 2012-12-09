@@ -1,7 +1,0 @@
-<!-- Copy this XML file to Bin\Addins\Primary -->
-
-<!-- Copy the binaries to Bin. DO NOT use basedir attribute since this top level tab contains at least one custom (WinForms or WPF) sub-tab. -->
-
-<!--jayrock: this must go into C:\Program Files\Windows Server\Bin\Addins\Primary-->
-
-<addin name="FTRL2LO" basedir="%ProgramFiles%\FTR2LO" type="FTR2LO_Vail.TopLevelTabPageProvider, FTR2LO_Vail.TopLevelTab" />

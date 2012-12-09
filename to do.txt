@@ -1,13 +1,8 @@
-Move to ATV
-========
-- Change GUID for product
-- change log name to ATV2LO
-- check "restart service"
-
 ToDo
 =====
+- service is sometimes not stopped on "uninstall" - check
+- Add "Refresh" button in Dashboard
 - Hide unimportant settings, e.g "Advanced" button
-- Change About tab
 
 Move to ATV -- DONE
 ==================
@@ -15,6 +10,11 @@ Move to ATV -- DONE
 - Change name in dashboard/addins -- addin.xml
 - Change service name
 - Change versions to 2.0
+- Change GUID for product
+- change log name to ATV2LO
+- check "restart service"
+- Change About tab
+
 
 DONE
 ====

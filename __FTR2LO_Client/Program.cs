@@ -12,7 +12,7 @@ namespace FTR2LO_Vail
         static void Main(string[] args)
         {
 
-            string address = "http://localhost:41432/WCFService1/FTR2LO_InternalService";
+            string address = "http://localhost:41433/WCFService1/FTR2LO_InternalService";
             System.ServiceModel.WSHttpBinding binding = new System.ServiceModel.WSHttpBinding();
             binding.Name = "WSHttpBinding_IFTR2LO"; // not sure if this is necessary.
             System.ServiceModel.EndpointAddress endpointAddress = new System.ServiceModel.EndpointAddress(address);

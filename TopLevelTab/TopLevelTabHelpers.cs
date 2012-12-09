@@ -11,7 +11,7 @@ using System.Xml;
 using System.Threading;
 using System.IO;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     static class TopLevelTabHelpers
     {
@@ -227,7 +227,7 @@ namespace FTR2LO_Vail
             {
                 var addinMgr = new AddInManager();
                 addinMgr.NewAddInVersionAvailable(
-                   new Guid("0098E620-DA88-476D-9BFC-0F4CE2195E09"), //<Id> from AddIn.xml
+                   new Guid("9b190a4e-3657-4770-8939-75a1f65ceaab"), //<Id> from AddIn.xml
                    new Version(remote_version_string),
                    new Uri(remote_url),
                    UpdateClassification.Update);

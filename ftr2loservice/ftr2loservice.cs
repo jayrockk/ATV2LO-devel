@@ -251,7 +251,7 @@ namespace ftr2loservice
 
             try
             {
-                Uri baseAddr = new Uri("http://localhost:41432/WCFService1");
+                Uri baseAddr = new Uri("http://localhost:41433/WCFService1");
                 localHost = new ServiceHost(typeof(FTR2LO), baseAddr);
                 localHost.AddServiceEndpoint(typeof(IFTR2LO), new WSHttpBinding(), "FTR2LO_InternalService");
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();

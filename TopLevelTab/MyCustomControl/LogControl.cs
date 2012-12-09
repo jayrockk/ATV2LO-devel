@@ -4,7 +4,7 @@ using System.ServiceProcess;
 using System.Windows.Forms;
 using System.Text;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public partial class LogControl : UserControl
     {

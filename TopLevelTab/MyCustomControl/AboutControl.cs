@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public partial class AboutControl : UserControl
     {
@@ -27,9 +27,9 @@ namespace FTR2LO_Vail
             
             label_Donation.Text = "ArgusTV to Lights-Out\nis freeware -\nplease support the development!";
 
-            pictureBox1.Image = FTR2LO_Vail.Properties.Resources.btn_donateCC_LG;
+            pictureBox1.Image = ATV2LO_TopLevelTab.Properties.Resources.btn_donateCC_LG;
 
-            pictureBox2.Image = FTR2LO_Vail.Properties.Resources.icon_ATV2LO1;
+            pictureBox2.Image = ATV2LO_TopLevelTab.Properties.Resources.icon_ATV2LO1;
 
             //Version 1: Load the image from the internet
             //string URL = "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif";

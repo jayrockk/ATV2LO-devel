@@ -1,12 +1,12 @@
 using System;
 using Microsoft.WindowsServerSolutions.Administration.ObjectModel;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public class LogSubTabPage : ControlRendererPage
     {
         public LogSubTabPage()
-            : base(new Guid("DA565AC2-D4F8-401A-B19E-DCF06DD441DC"),
+            : base(new Guid("c38255dd-2c01-4d22-b4f7-d496f4d5036a"),
                 "Log",
                 "Log info") { }
 

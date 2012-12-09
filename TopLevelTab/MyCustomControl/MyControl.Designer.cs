@@ -1,4 +1,4 @@
-﻿namespace FTR2LO_Vail
+﻿namespace ATV2LO_TopLevelTab
 {
     partial class MyControl
     {

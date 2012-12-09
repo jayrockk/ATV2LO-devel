@@ -8,8 +8,8 @@
     <ProjectGuid>{AC0BFE86-91DF-4B48-A223-B50E3C698CCC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FTR2LO_Vail</RootNamespace>
-    <AssemblyName>FTR2LO_Vail.TopLevelTab</AssemblyName>
+    <RootNamespace>ATV2LO_TopLevelTab</RootNamespace>
+    <AssemblyName>ATV2LO.TopLevelTab</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
@@ -152,6 +152,7 @@
     </Content>
     <Content Include="ATV2LO_Vail.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Resources\icon_ATV2LO.png" />
     <None Include="Resources\icon_ATV2LO.ico" />

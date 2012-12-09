@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public partial class MyControl : UserControl
     {
@@ -131,7 +131,7 @@ namespace FTR2LO_Vail
 
         private void clear_pictureBox1()
         {
-            Update_pictureBox1_Image(FTR2LO_Vail.Properties.Resources.Blank);
+            Update_pictureBox1_Image(ATV2LO_TopLevelTab.Properties.Resources.Blank);
             Visible_loadingCircle1(true);
         }
 
@@ -139,10 +139,10 @@ namespace FTR2LO_Vail
         {
             //String _textBlank = null;
 
-            Update_pictureBoxFTR_Image(FTR2LO_Vail.Properties.Resources.Blank__16x16_72);
-            Update_pictureBoxFTR2LO_Image(FTR2LO_Vail.Properties.Resources.Blank__16x16_72);
-            Update_pictureBoxFTR_Image(FTR2LO_Vail.Properties.Resources.Blank__16x16_72);
-            Update_pictureBox1_Image(FTR2LO_Vail.Properties.Resources.Blank);
+            Update_pictureBoxFTR_Image(ATV2LO_TopLevelTab.Properties.Resources.Blank__16x16_72);
+            Update_pictureBoxFTR2LO_Image(ATV2LO_TopLevelTab.Properties.Resources.Blank__16x16_72);
+            Update_pictureBoxFTR_Image(ATV2LO_TopLevelTab.Properties.Resources.Blank__16x16_72);
+            Update_pictureBox1_Image(ATV2LO_TopLevelTab.Properties.Resources.Blank);
 
             Update_label_actual_FTRstatus("Working... please be patient");
             Update_label_actual_LOstatus("Working... please be patient");
@@ -178,16 +178,16 @@ namespace FTR2LO_Vail
             if (LOstatus == "Running")
             {
                 Visible_loadingCircle_LO(false);
-                Update_pictureBoxLO_Image(FTR2LO_Vail.Properties.Resources.Complete_OK__16x16_72);
+                Update_pictureBoxLO_Image(ATV2LO_TopLevelTab.Properties.Resources.Complete_OK__16x16_72);
             }
             else if (LOstatus == "Not installed.")
             {
                 Visible_loadingCircle_LO(false);
-                Update_pictureBoxLO_Image(FTR2LO_Vail.Properties.Resources.CriticalError_16x16_72);
+                Update_pictureBoxLO_Image(ATV2LO_TopLevelTab.Properties.Resources.CriticalError_16x16_72);
             }
             else
             {
-                Update_pictureBoxLO_Image(FTR2LO_Vail.Properties.Resources.Warning_16x16_72);
+                Update_pictureBoxLO_Image(ATV2LO_TopLevelTab.Properties.Resources.Warning_16x16_72);
                 Visible_loadingCircle_LO(false);
             }
 
@@ -195,7 +195,7 @@ namespace FTR2LO_Vail
             bool _isconnectedtoFTR2LO = false;
             int _status = -3;
             string _FTRStatus = "Unknown (1)";
-            string _address = "http://localhost:41432/WCFService1/FTR2LO_InternalService";
+            string _address = "http://localhost:41433/WCFService1/FTR2LO_InternalService";
             FTR2LOClient client = null;
             System.ServiceModel.WSHttpBinding binding = null;
             System.ServiceModel.EndpointAddress endpointAddress = null;
@@ -223,9 +223,9 @@ namespace FTR2LO_Vail
                 //in this case, display error for FTR2LO and leave FTR loadingcircle
                 Update_label_actual_server_status("Error: Not connected");
                 Update_label_actual_FTRstatus("Unknown");
-                Update_pictureBoxFTR2LO_Image(FTR2LO_Vail.Properties.Resources.CriticalError_16x16_72);
+                Update_pictureBoxFTR2LO_Image(ATV2LO_TopLevelTab.Properties.Resources.CriticalError_16x16_72);
                 Visible_loadingCircle_FTR2LO(false);
-                Update_pictureBox1_Image(FTR2LO_Vail.Properties.Resources.CriticalError);
+                Update_pictureBox1_Image(ATV2LO_TopLevelTab.Properties.Resources.CriticalError);
                 Visible_loadingCircle1(false);
             }
             finally
@@ -239,30 +239,30 @@ namespace FTR2LO_Vail
             {
                 Visible_loadingCircle_FTR2LO(false);
                 Update_label_actual_server_status("Connected");
-                Update_pictureBoxFTR2LO_Image(FTR2LO_Vail.Properties.Resources.Complete_OK__16x16_72);
+                Update_pictureBoxFTR2LO_Image(ATV2LO_TopLevelTab.Properties.Resources.Complete_OK__16x16_72);
 
                 // FTRL2LO icon and large icon
                 Update_label_actual_FTRstatus(_FTRStatus);
                 if (_status == 0)
                 {
                     Visible_loadingCircle_FTR(false);
-                    Update_pictureBoxFTR_Image(FTR2LO_Vail.Properties.Resources.Complete_OK__16x16_72);
+                    Update_pictureBoxFTR_Image(ATV2LO_TopLevelTab.Properties.Resources.Complete_OK__16x16_72);
                     Visible_loadingCircle1(false);
-                    Update_pictureBox1_Image(FTR2LO_Vail.Properties.Resources.Complete_OK);
+                    Update_pictureBox1_Image(ATV2LO_TopLevelTab.Properties.Resources.Complete_OK);
                 }
                 else
                 {
                     Visible_loadingCircle_FTR(false);
-                    Update_pictureBoxFTR_Image(FTR2LO_Vail.Properties.Resources.Warning_16x16_72);
+                    Update_pictureBoxFTR_Image(ATV2LO_TopLevelTab.Properties.Resources.Warning_16x16_72);
                     Visible_loadingCircle1(false);
-                    Update_pictureBox1_Image(FTR2LO_Vail.Properties.Resources.Warning);
+                    Update_pictureBox1_Image(ATV2LO_TopLevelTab.Properties.Resources.Warning);
                 }
             }
             else
             {
                 Update_label_actual_server_status("Not connected");
                 Visible_loadingCircle1(false);
-                Update_pictureBoxFTR_Image(FTR2LO_Vail.Properties.Resources.CriticalError_16x16_72);
+                Update_pictureBoxFTR_Image(ATV2LO_TopLevelTab.Properties.Resources.CriticalError_16x16_72);
                 Update_label_actual_FTRstatus("Unknown");
             }
             timer1.Start();

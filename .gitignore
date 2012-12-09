@@ -28,4 +28,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 _out/
 *.msi
+*.*.msi
 *.wssx

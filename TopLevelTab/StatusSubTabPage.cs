@@ -1,14 +1,14 @@
 using System;
 using Microsoft.WindowsServerSolutions.Administration.ObjectModel;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public class StatusSubTabPage : ControlRendererPage
     {
         public StatusSubTabPage()
-            : base(new Guid("3db7d5a0-68b0-4bd2-afba-3f0266cff9e9"),
+            : base(new Guid("820ee168-ade4-470d-a3ba-a8a7f568a6e8"),
                 "Overview",
-                "Status summary and configuration of FTR2LO") { }
+                "Status summary and configuration of ATV2LO") { }
 
         protected override ControlRendererPageContent CreateContent()
         {

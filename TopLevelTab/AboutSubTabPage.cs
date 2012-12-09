@@ -1,14 +1,14 @@
 using System;
 using Microsoft.WindowsServerSolutions.Administration.ObjectModel;
 
-namespace FTR2LO_Vail
+namespace ATV2LO_TopLevelTab
 {
     public class AboutSubTabPage : ControlRendererPage
     {
         public AboutSubTabPage()
-            : base(new Guid("3db7d5a0-68b0-4bd2-afba-3f0266cff9e0"),
+            : base(new Guid("a6c586b2-7f60-49f8-aa78-67e5bea26e25"),
                 "About",
-                "About FTR2LO") { }
+                "About Argus TV to Lights-Out") { }
 
         protected override ControlRendererPageContent CreateContent()
         {

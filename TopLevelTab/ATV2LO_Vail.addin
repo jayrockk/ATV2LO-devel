@@ -4,4 +4,4 @@
 
 <!--jayrock: this must go into C:\Program Files\Windows Server\Bin\Addins\Primary-->
 
-<addin name="ATV2LO" basedir="%ProgramFiles%\ATV2LO" type="FTR2LO_Vail.TopLevelTabPageProvider, FTR2LO_Vail.TopLevelTab" />
+<addin name="ATV2LO" basedir="%ProgramFiles%\ATV2LO" type="ATV2LO_TopLevelTab.TopLevelTabPageProvider, ATV2LO.TopLevelTab" />
