@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.7" Manufacturer="jayrock" UpgradeCode="25cfc075-9016-43b5-b3ed-ca67b0d1a35c">
+    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.8" Manufacturer="jayrock" UpgradeCode="25cfc075-9016-43b5-b3ed-ca67b0d1a35c">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -20,7 +20,7 @@
                         </Directory>
                     </Directory>
                 </Directory>
-                <Directory Id="INSTALLDIR" Name="FTR2LO">
+                <Directory Id="INSTALLDIR" Name="ATV2LO">
                     <Component Id="FTR2LOService" Guid="0556667A-6F14-11DF-8019-B833E0D72085" Win64="yes">
                         <File Id="ftr2loservice.exe" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe" KeyPath="yes" DiskId="1" />
                         <File Id="ftr2loservice.exe.config" Source="..\ftr2loservice\bin\x64\Release\ftr2loservice.exe.config" DiskId="1" />
@@ -42,8 +42,8 @@
                 </Directory>
             </Directory>
             <Directory Id="CommonAppDataFolder" Name="CommonAppDataFolder">
-                <Directory Id="FTR2LOFolder" Name="FTR2LO">
-                    <Component Id="FTR2LOcomp" Guid="f6bc45e3-af24-4dfa-b894-e1cb8fed67ee">
+                <Directory Id="ATV2LOFolder" Name="ATV2LO">
+                    <Component Id="ATV2LOcomp" Guid="13d718b1-8ee9-488d-9a92-9cf88b33a3be">
                         <CreateFolder/>
                     </Component>
                     <Directory Id="logsFolder" Name="logs">
@@ -68,7 +68,7 @@
             <ComponentRef Id="ATV2LO_Vail.addin"/>
             <!--ComponentRef Id="FTR2LO_Vail_TAB_reference"/-->
             <ComponentRef Id="FTR2LOService" />
-            <ComponentRef Id="FTR2LOcomp" />
+            <ComponentRef Id="ATV2LOcomp" />
             <ComponentRef Id="logscomp" />
             <ComponentRef Id="configcomp" />
         </Feature>
