@@ -72,7 +72,7 @@ namespace ftr2loservice
             FTR2LO_Config.ConfigFunctions.CheckExistingConfigValidity();
             FTR2LO_Config.ConfigFunctions.ReadConfig(config);
             FTR2LO_Log.FTR2LO_log.CurrentLogLevel = FTR2LO_Log.FTR2LO_log.intLogLevel(config.LogLevel);
-            FTR2LO_Log.FTR2LO_log.Filename = "FTR2LO";
+            FTR2LO_Log.FTR2LO_log.Filename = "ATV2LO";
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.INFO, "Start service. Version " + get_FTR2LO_version_from_registry());
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_Log.FTR2LO_log.LogLevel.DEBUG, FTR2LO_Log.FTR2LO_log.Delete_old_logs(10));
 
@@ -558,7 +558,7 @@ namespace ftr2loservice
             serverSettings.ServerName = _forTheRecordServerName;
             serverSettings.Port = _forTheRecordPort;
 
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Trying to connect to FTR service on " + _forTheRecordServerName + ":" + _forTheRecordPort);
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Trying to connect to Argus TV service on " + _forTheRecordServerName + ":" + _forTheRecordPort);
 
             while (!success)
             {
@@ -594,7 +594,7 @@ namespace ftr2loservice
                     System.Threading.Thread.Sleep(RetryDelay);
                 }
             }
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "FTR2LO API version: " + Constants.CurrentApiVersion.ToString());
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ATV2LO API version: " + Constants.CurrentApiVersion.ToString());
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, PingFTRToString(PingFTR(_forTheRecordServerName, _forTheRecordPort)));
         }
 
@@ -630,13 +630,13 @@ namespace ftr2loservice
             switch (status)
             {
                 case 0:
-                    ret = "FTR2LO and FTR are compatible";
+                    ret = "ATV2LO and Argus TV compatible";
                     break;
                 case 1:
-                    ret = "FTR Server too old, please update to latest version";
+                    ret = "Argus TV too old, please update to latest version";
                     break;
                 case -1:
-                    ret = "FTR2LO too old, please update to latest version";
+                    ret = "ATV2LO too old, please update to latest version";
                     break;
                 case -2:
                     ret = "Cannot connect to Service (-2)";
