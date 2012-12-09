@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="7E1619A4-708B-4FD5-8EF5-504CF39BD6E7" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.4" Manufacturer="jayrock" UpgradeCode="15D96D43-3290-448E-8D2F-90C4A6084D6C">
+    <Product Id="e07b53a8-72a0-455e-a111-3f519bd457de" Name="Argus TV to Lights Out" Language="1033" Version="2.0.0.7" Manufacturer="jayrock" UpgradeCode="25cfc075-9016-43b5-b3ed-ca67b0d1a35c">
         <Package InstallerVersion="200" Compressed="yes" Platform="x64" />
 
         <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
@@ -12,8 +12,8 @@
                         
                         <Directory Id="INSTALLLOCATION_Addins" Name="Addins">
                             <Directory Id="INSTALLLOCATION_Primary" Name="Primary">
-                                <Component Id="FTR2LO_Vail.addin" Guid="D26C4C81-DD3D-45C8-ADDF-FFEFF383FB36" Win64="yes">
-                                    <File Id="FTR2LO_Vail.addin" Source="..\TopLevelTab\FTR2LO_Vail.addin"
+                                <Component Id="ATV2LO_Vail.addin" Guid="00ed11bb-b017-4494-9ead-e38d7e1245a8" Win64="yes">
+                                    <File Id="ATV2LO_Vail.addin" Source="..\TopLevelTab\ATV2LO_Vail.addin"
 										  Vital="yes" KeyPath="yes" DiskId="1"/>
                                 </Component>
                             </Directory>
@@ -65,7 +65,7 @@
         <Feature Id="ProductFeature" Title="Server" Level="1">
             <ComponentRef Id="FTR2LO_Vail.TopLevelTab.dll"/>
             <!--ComponentRef Id="FTR2LO_Vail.SubTab.dll"/-->
-            <ComponentRef Id="FTR2LO_Vail.addin"/>
+            <ComponentRef Id="ATV2LO_Vail.addin"/>
             <!--ComponentRef Id="FTR2LO_Vail_TAB_reference"/-->
             <ComponentRef Id="FTR2LOService" />
             <ComponentRef Id="FTR2LOcomp" />

@@ -150,7 +150,7 @@
     <Content Include="AddIn.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="FTR2LO_Vail.addin">
+    <Content Include="ATV2LO_Vail.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\icon_ATV2LO.png" />
