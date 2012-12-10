@@ -433,7 +433,7 @@ namespace ftr2loservice
                     aprogid = up.UpcomingProgramId;
                     fstart = astart.Year.ToString() + "-" + astart.Month.ToString("00") + "-" + astart.Day.ToString("00") + "T" + astart.TimeOfDay.ToString();
                     fstop = astop.Year.ToString() + "-" + astop.Month.ToString("00") + "-" + astop.Day.ToString("00") + "T" + astop.TimeOfDay.ToString();
-                    fprogid = "FTR2LO-" + System.Guid.NewGuid().ToString();
+                    fprogid = "ATV2LO-" + System.Guid.NewGuid().ToString();
 
                     Item item_tst = new Item(fstart, fstop, fprogid);
                     ftrce1.AddItem(item_tst);
@@ -472,7 +472,7 @@ namespace ftr2loservice
                 foreach (Item i in loce1.listEntries)
                 {
                     //FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "fnow: " + fnow + ", Actual Stop Time: " + i.enddate + ", Compare: " + String.Compare(i.enddate, fnow).ToString() + ", Substring" + hf.find_substring_in_string(i.name, "FTR2LO") + ", in FTR: "+ (hf.find_task_in_list(ftrce1, i)));
-                    if ((hf.find_substring_in_string(i.name, "FTR2LO") != -1) // if FTRLO incl, it is greater than -1
+                    if ((hf.find_substring_in_string(i.name, "ATV2LO") != -1) // if FTRLO incl, it is greater than -1
                         && (_purgeoldftr2loitems || (String.Compare(i.enddate, fnow) == 1)) //if earlier, it is -1
                         && (hf.find_task_in_list(ftrce1, i) == false))
                     {

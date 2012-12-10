@@ -88,7 +88,7 @@ namespace LightsOutCalendarEntry
             onend= "DoNothing";
             onstart = "WakeUp";
             startdate = StartDate;
-            type = "For the Record";
+            type = "Argus TV";
         }
 
     }

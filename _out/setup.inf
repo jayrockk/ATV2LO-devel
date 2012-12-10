@@ -1,6 +1,6 @@
 ;*** BEGIN **********************************************************
 ;**                                                                **
-;** Automatically generated on: Sun Dec 09 14:23:55 2012           **
+;** Automatically generated on: Mon Dec 10 20:26:20 2012           **
 ;**                                                                **
 ;** MakeCAB Version: 6.1.7600.16385                                 **
 ;**                                                                **
@@ -12,9 +12,9 @@
 [file list]
 1,1,AddIn.xml,780
 1,1,Server.msi,184320
-1,1,Eula.rtf,6288
+1,1,Eula.rtf,6283
 ;*** END ************************************************************
 ;**                                                                **
-;** Automatically generated on: Sun Dec 09 14:23:55 2012           **
+;** Automatically generated on: Mon Dec 10 20:26:20 2012           **
 ;**                                                                **
 ;*** END ************************************************************

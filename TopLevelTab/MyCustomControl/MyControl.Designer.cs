@@ -127,7 +127,7 @@
             this.numericUpDown_EarlyStart.Size = new System.Drawing.Size(45, 20);
             this.numericUpDown_EarlyStart.TabIndex = 35;
             this.toolTip1.SetToolTip(this.numericUpDown_EarlyStart, "If you want the computer to wake up some minutes before the recording, set it her" +
-                    "e.");
+        "e.");
             this.numericUpDown_EarlyStart.Leave += new System.EventHandler(this.numericUpDown_EarlyStart_Leave);
             // 
             // numericUpDown_ServerPort
@@ -161,7 +161,7 @@
             this.textBox_ServerName.Size = new System.Drawing.Size(55, 20);
             this.textBox_ServerName.TabIndex = 33;
             this.toolTip1.SetToolTip(this.textBox_ServerName, "Host name or IP address of the computer that runs For the Record. If FTR2LO is ru" +
-                    "nning on the same computer, set this to \"localhost\". ");
+        "nning on the same computer, set this to \"localhost\". ");
             this.textBox_ServerName.Leave += new System.EventHandler(this.textBox_ServerName_Leave_1);
             // 
             // label_ServerPort
@@ -335,9 +335,9 @@
             this.label_ForTheRecord_service_status.Font = new System.Drawing.Font("Tahoma", 8F);
             this.label_ForTheRecord_service_status.Location = new System.Drawing.Point(221, 51);
             this.label_ForTheRecord_service_status.Name = "label_ForTheRecord_service_status";
-            this.label_ForTheRecord_service_status.Size = new System.Drawing.Size(50, 13);
+            this.label_ForTheRecord_service_status.Size = new System.Drawing.Size(54, 13);
             this.label_ForTheRecord_service_status.TabIndex = 22;
-            this.label_ForTheRecord_service_status.Text = "Argus TV";
+            this.label_ForTheRecord_service_status.Text = "Argus TV:";
             // 
             // label_FTR2LO_service_status
             // 
