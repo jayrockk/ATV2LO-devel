@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 	<Id>9b190a4e-3657-4770-8939-75a1f65ceaab</Id>
-	<Version>2.0.0.23</Version>
+	<Version>2.0.0.26</Version>
 	<Name>Argus TV to Lights-Out</Name>
 	<Allow32BitOn64BitClients>false</Allow32BitOn64BitClients>
 	<MinimumClientOSVersion>5.1</MinimumClientOSVersion>
 	<ServerBinary>
 		<File>
 			<ProductCode>e07b53a8-72a0-455e-a111-3f519bd457de</ProductCode>
-			<Version>2.0.0.23</Version>
+			<Version>2.0.0.26</Version>
 			<Name>Server.msi</Name>
 		</File>
 	</ServerBinary>

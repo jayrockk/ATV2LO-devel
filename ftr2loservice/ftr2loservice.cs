@@ -471,7 +471,6 @@ namespace ftr2loservice
 
                 foreach (Item i in loce1.listEntries)
                 {
-                    //FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "fnow: " + fnow + ", Actual Stop Time: " + i.enddate + ", Compare: " + String.Compare(i.enddate, fnow).ToString() + ", Substring" + hf.find_substring_in_string(i.name, "FTR2LO") + ", in FTR: "+ (hf.find_task_in_list(ftrce1, i)));
                     if ((hf.find_substring_in_string(i.name, "ATV2LO") != -1) // if FTRLO incl, it is greater than -1
                         && (_purgeoldftr2loitems || (String.Compare(i.enddate, fnow) == 1)) //if earlier, it is -1
                         && (hf.find_task_in_list(ftrce1, i) == false))

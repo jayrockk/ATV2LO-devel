@@ -205,6 +205,9 @@ namespace ATV2LO_TopLevelTab
                 binding = new System.ServiceModel.WSHttpBinding();
                 binding.Name = "WSHttpBinding_IFTR2LO"; // not sure if this is necessary.
                 endpointAddress = new System.ServiceModel.EndpointAddress(_address);
+                System.TimeSpan receiveTimeout = new System.TimeSpan();
+                TimeSpan.TryParse("00:10:00", out receiveTimeout);
+                binding.ReceiveTimeout = receiveTimeout;
                 //FTR2LOClient client = null;
             }
             catch (Exception ex)

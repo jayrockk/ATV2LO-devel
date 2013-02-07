@@ -9,7 +9,7 @@ namespace ATV2LO_TopLevelTab
     {
         public TopLevelTabPageProvider()
             : base(new Guid("d2c5f7c6-395f-419f-8c77-0c73f37b354c"),
-                   "ATV2LO",
+                   "Argus TV to Lights-Out",
                    "Argus TV to Lights-Out")
         {
             TopLevelTabHelpers.CheckForNewVersion();
