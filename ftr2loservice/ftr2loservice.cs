@@ -564,7 +564,7 @@ namespace ftr2loservice
                 try
                 {
                     ServiceChannelFactories.Initialize(serverSettings, true);
-                    string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
+                    //string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
                     {
                         FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ServiceChannelFactories successfully initialized.");
@@ -574,7 +574,7 @@ namespace ftr2loservice
                         FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ServiceChannelFactories are now initialized.");
                     }
                     success = true;
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Argus TV installed version: " + FTR_version);
+                    //FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Argus TV installed version: " + FTR_version);
                 }
 
                 catch (ArgusTV.DataContracts.ArgusTVException atvex)
@@ -593,7 +593,7 @@ namespace ftr2loservice
                     System.Threading.Thread.Sleep(RetryDelay);
                 }
             }
-            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ATV2LO API version: " + Constants.CurrentApiVersion.ToString());
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ATV2LO local API version: " + Constants.CurrentApiVersion.ToString());
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, PingFTRToString(PingFTR(_forTheRecordServerName, _forTheRecordPort)));
         }
 
