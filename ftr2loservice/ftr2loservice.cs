@@ -476,7 +476,6 @@ namespace ftr2loservice
                         && (hf.find_task_in_list(ftrce1, i) == false))
                     {
                         _changeflag = true;
-                        FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.INFO, "Remove obsolete task from Lights-Out. Actual Start Time: " + i.startdate + ", Actual Stop Time: " + i.enddate);
                         todelete.AddItem(i);
                     }
                 }
@@ -491,7 +490,13 @@ namespace ftr2loservice
 
                 foreach (Item i in todelete.listEntries)
                 {
+                    //remove from LO Task-LIst
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.INFO, "Remove obsolete task from Lights-Out. Actual Start Time: " + i.startdate + ", Actual Stop Time: " + i.enddate);
                     loce1.RemoveItem(i);
+                    
+                    // additionally, remove orphaned entries vom Windows task list
+                    string tmp = DeleteWinTasks_CMD.DeleteOldWinTasks.RemoveFromWindowsTasklist(i.name);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.INFO, "Remove obsolete task from Windows Task Scheduler: " + tmp);
                 }
 
                 #endregion
