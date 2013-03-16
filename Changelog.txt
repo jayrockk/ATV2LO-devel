@@ -19,3 +19,9 @@
 - Improved Dashboard GUI, now giving more and clearer information.
 - Enhancements for installations where For The Record is running on a different machine (not Windows Home Server) - now the connections status correctly reported in the dashboard GUI
 - Stability improvements
+
+2.0.0.1
+- Changed to ArgusTV API
+
+2.1.0.2
+- Windows Task Scheduler synchronisation improved, now Windows Task Scheduler is kept clean of obsolete entries
