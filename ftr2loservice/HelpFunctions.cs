@@ -71,7 +71,7 @@ namespace HelpFunctions
             }
             catch(Exception e)
             {
-                FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Error writing to file " + filepath + ". Stop.\n" + e.ToString());
+                FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.ERROR, "Error writing to file " + filepath + ". Stop.\n" + e.ToString());
                 Environment.Exit(1);
             }
 
