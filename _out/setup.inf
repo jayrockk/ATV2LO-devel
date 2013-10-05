@@ -1,8 +1,8 @@
 ;*** BEGIN **********************************************************
 ;**                                                                **
-;** Automatically generated on: Sat Mar 16 07:52:52 2013           **
+;** Automatically generated on: Sat Oct 05 18:41:00 2013           **
 ;**                                                                **
-;** MakeCAB Version: 6.1.7600.16385                                 **
+;** MakeCAB Version: 6.2.9200.16384                                 **
 ;**                                                                **
 ;*** BEGIN **********************************************************
 [disk list]
@@ -11,10 +11,10 @@
 1,1,ATV2LO.wssx
 [file list]
 1,1,AddIn.xml,778
-1,1,Server.msi,188416
+1,1,Server.msi,180224
 1,1,Eula.rtf,6283
 ;*** END ************************************************************
 ;**                                                                **
-;** Automatically generated on: Sat Mar 16 07:52:52 2013           **
+;** Automatically generated on: Sat Oct 05 18:41:00 2013           **
 ;**                                                                **
 ;*** END ************************************************************
