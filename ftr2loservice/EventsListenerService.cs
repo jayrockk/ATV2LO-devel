@@ -33,6 +33,7 @@ namespace ftr2loservice
 #endif
 ConcurrencyMode = ConcurrencyMode.Single,
         InstanceContextMode = InstanceContextMode.Single)]
+
     public class EventsListenerService : EventsListenerServiceBase
     {
         private string _modulename = "Events";
