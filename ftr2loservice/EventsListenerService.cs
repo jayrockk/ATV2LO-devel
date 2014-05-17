@@ -20,9 +20,10 @@
  */
 using System;
 using System.ServiceModel;
-using ArgusTV.Client.Common;
-using ArgusTV.ServiceContracts.Events;
-using ArgusTV.DataContracts;
+//using ArgusTV.Client.Common;
+//using ArgusTV.ServiceContracts.Events;
+//using ArgusTV.DataContracts;
+using ArgusTV.ServiceProxy;
 using FTR2LO_Log;
 
 namespace ftr2loservice

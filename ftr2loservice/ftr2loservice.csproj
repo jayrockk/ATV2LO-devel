@@ -65,17 +65,12 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArgusTV.Client.Common">
-      <HintPath>References\ArgusTV.Client.Common.dll</HintPath>
+    <Reference Include="ArgusTV.DataContracts, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-4\lib\net40\ArgusTV.DataContracts.dll</HintPath>
     </Reference>
-    <Reference Include="ArgusTV.DataContracts">
-      <HintPath>References\ArgusTV.DataContracts.dll</HintPath>
-    </Reference>
-    <Reference Include="ArgusTV.ServiceAgents">
-      <HintPath>References\ArgusTV.ServiceAgents.dll</HintPath>
-    </Reference>
-    <Reference Include="ArgusTV.ServiceContracts">
-      <HintPath>References\ArgusTV.ServiceContracts.dll</HintPath>
+    <Reference Include="ArgusTV.ServiceProxy">
+      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-4\lib\net40\ArgusTV.ServiceProxy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -134,6 +129,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

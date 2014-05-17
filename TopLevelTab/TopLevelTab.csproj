@@ -154,6 +154,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="packages.config" />
     <None Include="Resources\icon_ATV2LO.png" />
     <None Include="Resources\icon_ATV2LO.ico" />
     <None Include="Resources\Blank.png" />
