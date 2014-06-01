@@ -12,7 +12,9 @@ using System.Threading;
 using System.Timers;
 //using ArgusTV.DataContracts;
 //using ArgusTV.ServiceAgents;
+//using ArgusTV.ServiceProxy;
 using ArgusTV.ServiceProxy;
+using ArgusTV.DataContracts;
 using FTR2LO_Log;
 using LightsOutCalendarEntry;
 using Microsoft.Win32;
@@ -151,7 +153,7 @@ namespace ftr2loservice
     {
         #region const
         private System.Timers.Timer timer1 = new System.Timers.Timer();
-        ServiceHost serviceHost;
+        //ServiceHost serviceHost;
         const string _modulename = "FTR2LO";
         #endregion
 
@@ -227,7 +229,7 @@ namespace ftr2loservice
         //because it returns true also if the ServiceChannelFactories do not longer exist
         public bool IsConnectedToFTR()
         {
-            return ServiceChannelFactories.IsInitialized;
+            return ProxyFactory.IsInitialized; // ServiceChannelFactories.IsInitialized;
         }
 
         public int IPingFTR()
@@ -339,7 +341,7 @@ namespace ftr2loservice
 
             InitializeServiceChannelFactories(Ftr2LoService.config.ServerName, Convert.ToInt32(Ftr2LoService.config.ServerPort));
 
-            InitializeEventListener(); //comment this out to remove the event listener
+            //InitializeEventListener(); //comment this out to remove the event listener
 
             try
             {
@@ -354,10 +356,10 @@ namespace ftr2loservice
 
             //the following is called when the service is finally stopped
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Stopping....");
-            {
+            /*{
                 if (serviceHost != null)
                     ((IDisposable)serviceHost).Dispose();
-            }
+            }*/
 
             //the following is called when the service is finally stopped
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Stopped.");
@@ -383,12 +385,12 @@ namespace ftr2loservice
 
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ftr2lo_main running...");
 
-            if (ServiceChannelFactories.IsInitialized)
+            if (ProxyFactory.IsInitialized) //  ServiceChannelFactories.IsInitialized)
             {
                 HelpFunctions.HelpFunctions hf = new HelpFunctions.HelpFunctions();
                 string filepath = Ftr2LoService.config.FilepathLO;
                 bool _changeflag = false;
-                UpcomingProgram[] upcomingprograms;
+                System.Collections.Generic.List<UpcomingProgram> upcomingprograms;
 
                 #region get Lights-Out entries
 
@@ -411,7 +413,8 @@ namespace ftr2loservice
 
                 #region get FTR entries
 
-                using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
+                //using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
+                ArgusTV.ServiceProxy.SchedulerServiceProxy tvssa = new SchedulerServiceProxy();
                 {
                     upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
                 }
@@ -441,9 +444,9 @@ namespace ftr2loservice
                     guid_name_hashtable.Add(fprogid, aname);
                 }
 
-                if (upcomingprograms.Length > 0)
+                if (upcomingprograms.Count > 0)
                 {
-                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Number of upcoming programs: " + upcomingprograms.Length);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Number of upcoming programs: " + upcomingprograms.Count);
 
                 }
 
@@ -556,8 +559,10 @@ namespace ftr2loservice
         private void InitializeServiceChannelFactories(string _forTheRecordServerName, int _forTheRecordPort)
         {
             int RetryDelay = 30000; //ms
-            bool success = ServiceChannelFactories.IsInitialized;
+            bool success = ProxyFactory.IsInitialized; //ServiceChannelFactories.IsInitialized;
             bool success_on_first_attempt = true;
+
+            
 
             ServerSettings serverSettings = new ServerSettings();
             serverSettings.ServerName = _forTheRecordServerName;
@@ -569,7 +574,11 @@ namespace ftr2loservice
             {
                 try
                 {
-                    ServiceChannelFactories.Initialize(serverSettings, true);
+                    
+                    //ServiceChannelFactories.Initialize(serverSettings, true);
+                    ProxyFactory.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
+
+
                     //string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
                     {
@@ -663,11 +672,12 @@ namespace ftr2loservice
 
             try
             {
-                if (!ServiceChannelFactories.IsInitialized)
+                if (!ProxyFactory.IsInitialized) // ServiceChannelFactories.IsInitialized)
                 {
                     InitializeServiceChannelFactories(_forTheRecordServerName, _forTheRecordPort);
                 }
-                using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                //using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                ArgusTV.ServiceProxy.CoreServiceProxy iftrs = new ArgusTV.ServiceProxy.CoreServiceProxy();
                 {
                     result = iftrs.Ping(Constants.CurrentApiVersion);
                 }
@@ -710,7 +720,7 @@ namespace ftr2loservice
 
         #endregion
 
-        #region EventListener
+       /* #region EventListener
 
         private void InitializeEventListener()
         {
@@ -730,7 +740,7 @@ namespace ftr2loservice
 
                 try
                 {
-                    if (ServiceChannelFactories.IsInitialized)
+                    if (ProxyFactory.IsInitialized) //ServiceChannelFactories.IsInitialized)
                     {
                         StartListenerServices(String.Format("net.tcp://{0}:{1}/FTREventListener/", eventListenerHost, port.ToString()));
                     }
@@ -759,9 +769,10 @@ namespace ftr2loservice
             try
             {
                 serviceHost.Open();
-                using (ArgusTV.ServiceAgents.CoreServiceAgent agent = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                //using (ArgusTV.ServiceAgents.CoreServiceAgent agent = new ArgusTV.ServiceAgents.CoreServiceAgent())
+                ArgusTV.ServiceProxy.CoreServiceProxy agent = new CoreServiceProxy();
                 {
-                    agent.EnsureEventListener(ArgusTV.DataContracts.EventGroup.RecordingEvents, serviceUrl, Constants.EventListenerApiVersion);
+                    agent.SubscribeServiceEvents("0815", ArgusTV.DataContracts.EventGroup.RecordingEvents);
                 }
                 FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ok.");
             }
@@ -778,7 +789,7 @@ namespace ftr2loservice
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Stop EventListener...");
             serviceHost.Close();
         }
-        #endregion
+        #endregion */
     }
     #endregion
 }

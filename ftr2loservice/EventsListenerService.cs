@@ -18,7 +18,8 @@
  *  http://www.gnu.org/copyleft/gpl.html
  *
  */
-using System;
+
+/*using System;
 using System.ServiceModel;
 //using ArgusTV.Client.Common;
 //using ArgusTV.ServiceContracts.Events;
@@ -133,4 +134,4 @@ ConcurrencyMode = ConcurrencyMode.Single,
             }
         }
     }
-}
+}*/
