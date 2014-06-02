@@ -562,8 +562,6 @@ namespace ftr2loservice
             bool success = ProxyFactory.IsInitialized; //ServiceChannelFactories.IsInitialized;
             bool success_on_first_attempt = true;
 
-            
-
             ServerSettings serverSettings = new ServerSettings();
             serverSettings.ServerName = _forTheRecordServerName;
             serverSettings.Port = _forTheRecordPort;
@@ -577,7 +575,6 @@ namespace ftr2loservice
                     
                     //ServiceChannelFactories.Initialize(serverSettings, true);
                     ProxyFactory.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
-
 
                     //string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
