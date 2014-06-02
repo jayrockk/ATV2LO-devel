@@ -65,12 +65,11 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ArgusTV.DataContracts, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-4\lib\net40\ArgusTV.DataContracts.dll</HintPath>
+    <Reference Include="ArgusTV.DataContracts, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-8\lib\net40\ArgusTV.DataContracts.dll</HintPath>
     </Reference>
-    <Reference Include="ArgusTV.ServiceProxy">
-      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-4\lib\net40\ArgusTV.ServiceProxy.dll</HintPath>
+    <Reference Include="ArgusTV.ServiceProxy, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ArgusTV.SchedulerProxy.2.3.0-beta-8\lib\net40\ArgusTV.ServiceProxy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />

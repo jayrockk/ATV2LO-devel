@@ -229,7 +229,7 @@ namespace ftr2loservice
         //because it returns true also if the ServiceChannelFactories do not longer exist
         public bool IsConnectedToFTR()
         {
-            return ProxyFactory.IsInitialized; // ServiceChannelFactories.IsInitialized;
+            return Proxies.IsInitialized; // ServiceChannelFactories.IsInitialized;
         }
 
         public int IPingFTR()
@@ -385,7 +385,7 @@ namespace ftr2loservice
 
             FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "ftr2lo_main running...");
 
-            if (ProxyFactory.IsInitialized) //  ServiceChannelFactories.IsInitialized)
+            if (Proxies.IsInitialized) //  ServiceChannelFactories.IsInitialized)
             {
                 HelpFunctions.HelpFunctions hf = new HelpFunctions.HelpFunctions();
                 string filepath = Ftr2LoService.config.FilepathLO;
@@ -414,7 +414,7 @@ namespace ftr2loservice
                 #region get FTR entries
 
                 //using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
-                ArgusTV.ServiceProxy.SchedulerServiceProxy tvssa = new SchedulerServiceProxy();
+                ArgusTV.ServiceProxy.SchedulerServiceProxy tvssa = null; // = new SchedulerServiceProxy();
                 {
                     upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
                 }
@@ -559,7 +559,7 @@ namespace ftr2loservice
         private void InitializeServiceChannelFactories(string _forTheRecordServerName, int _forTheRecordPort)
         {
             int RetryDelay = 30000; //ms
-            bool success = ProxyFactory.IsInitialized; //ServiceChannelFactories.IsInitialized;
+            bool success = Proxies.IsInitialized; //ServiceChannelFactories.IsInitialized;
             bool success_on_first_attempt = true;
 
             ServerSettings serverSettings = new ServerSettings();
@@ -574,7 +574,7 @@ namespace ftr2loservice
                 {
                     
                     //ServiceChannelFactories.Initialize(serverSettings, true);
-                    ProxyFactory.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
+                    Proxies.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
 
                     //string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
@@ -669,12 +669,12 @@ namespace ftr2loservice
 
             try
             {
-                if (!ProxyFactory.IsInitialized) // ServiceChannelFactories.IsInitialized)
+                if (!Proxies.IsInitialized) // ServiceChannelFactories.IsInitialized)
                 {
                     InitializeServiceChannelFactories(_forTheRecordServerName, _forTheRecordPort);
                 }
                 //using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
-                ArgusTV.ServiceProxy.CoreServiceProxy iftrs = new ArgusTV.ServiceProxy.CoreServiceProxy();
+                ArgusTV.ServiceProxy.CoreServiceProxy iftrs = null; // new ArgusTV.ServiceProxy.CoreServiceProxy();
                 {
                     result = iftrs.Ping(Constants.CurrentApiVersion);
                 }
@@ -694,7 +694,7 @@ namespace ftr2loservice
         }
 
 
-        private static int GetFreeTcpPort(int defaultport, int minport)
+        /*private static int GetFreeTcpPort(int defaultport, int minport)
         {
             int port = -1;
             while (defaultport >= minport)
@@ -713,7 +713,7 @@ namespace ftr2loservice
                 }
             }
             return port;
-        }
+        }*/
 
         #endregion
 
