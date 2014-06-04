@@ -333,8 +333,11 @@ namespace ftr2loservice
 
 
             // timer1 is for scheduled run of ftr2lo_main()
+            
+            FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.INFO, "Setting refresh timer to " + Ftr2LoService.config.RefreshIntervalInMins + " minutes.");
             this.timer1.AutoReset = true;
-            this.timer1.Interval = 1000 * 60 * Convert.ToInt32(appsettingsreader.GetValue("scheduledIntervalInMinutes", Int32.MaxValue.GetType()));
+            this.timer1.Interval = 60000 * Convert.ToInt32(Ftr2LoService.config.RefreshIntervalInMins);
+            // this.timer1.Interval = 1000 * 60 * Convert.ToInt32(appsettingsreader.GetValue("scheduledIntervalInMinutes", Int32.MaxValue.GetType()));
             this.timer1.Enabled = true;
             this.timer1.Elapsed += new ElapsedEventHandler(onTimer1Elapsed);
             this.timer1.Start();
@@ -414,11 +417,14 @@ namespace ftr2loservice
                 #region get FTR entries
 
                 //using (ArgusTV.ServiceAgents.SchedulerServiceAgent tvssa = new ArgusTV.ServiceAgents.SchedulerServiceAgent())
-                ArgusTV.ServiceProxy.SchedulerServiceProxy tvssa = null; // = new SchedulerServiceProxy();
+                // ArgusTV.ServiceProxy.SchedulerServiceProxy tvssa = null; // = new SchedulerServiceProxy();
                 {
-                    upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Fetching upcoming recordings ....");
+                    upcomingprograms = Proxies.SchedulerService.GetAllUpcomingPrograms(ScheduleType.Recording, false);
+                    // upcomingprograms = tvssa.GetAllUpcomingPrograms(ScheduleType.Recording, false);
                 }
 
+                FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Populating each upcoming recording ....");
                 foreach (UpcomingProgram up in upcomingprograms)
                 {
                     DateTime astart;
@@ -519,7 +525,7 @@ namespace ftr2loservice
             }
             else
             {
-                FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Probelm in ftr2lo_main: ServiceChannelFactories not initialized, trying to re-init....");
+                FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "Problem in ftr2lo_main: ServiceChannelFactories not initialized, trying to re-init....");
                 InitializeServiceChannelFactories(Ftr2LoService.config.ServerName, Convert.ToInt32(Ftr2LoService.config.ServerPort));
             }
 
@@ -574,7 +580,7 @@ namespace ftr2loservice
                 {
                     
                     //ServiceChannelFactories.Initialize(serverSettings, true);
-                    Proxies.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
+                    success = Proxies.Initialize(serverSettings, false); // .Initialize(serverSettings, false);
 
                     //string FTR_version = ArgusTV.DataContracts.Constants.ProductVersion;
                     if (success_on_first_attempt)
@@ -672,6 +678,7 @@ namespace ftr2loservice
                 if (!Proxies.IsInitialized) // ServiceChannelFactories.IsInitialized)
                 {
                     InitializeServiceChannelFactories(_forTheRecordServerName, _forTheRecordPort);
+                    FTR2LO_Log.FTR2LO_log.do_log(_modulename, (int)FTR2LO_log.LogLevel.DEBUG, "InitializeServiceChannelFactories on " + _forTheRecordServerName + ":" + _forTheRecordPort);
                 }
                 //using (ArgusTV.ServiceAgents.CoreServiceAgent iftrs = new ArgusTV.ServiceAgents.CoreServiceAgent())
                 ArgusTV.ServiceProxy.CoreServiceProxy iftrs = null; // new ArgusTV.ServiceProxy.CoreServiceProxy();

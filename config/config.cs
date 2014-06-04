@@ -56,6 +56,18 @@ namespace FTR2LO_Config
             }
         }
 
+        public string RefreshIntervalInMins
+        {
+            get
+            {
+                return _refreshintervalinmins;
+            }
+            set
+            {
+                _refreshintervalinmins = value;
+            }
+        }
+
         public string LogLevel
         {
             get
@@ -86,7 +98,8 @@ namespace FTR2LO_Config
         private string _earlystart;
         private string _servername;
         private string _serverport;
-        private string _loglevel;
+        private string _refreshintervalinmins;
+    private string _loglevel;
     }
 
 
@@ -116,7 +129,8 @@ namespace FTR2LO_Config
             cf.FilepathLO = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\LightsOut\\TaskList.xml";
             cf.EarlyStart = "3";
             cf.ServerName = "localhost";
-            cf.ServerPort = "49942";
+            cf.ServerPort = "49943";
+            cf.RefreshIntervalInMins = "1";
             cf.LogLevel = FTR2LO_Log.FTR2LO_log.stringLogLevel((int)FTR2LO_Log.FTR2LO_log.LogLevel.WARNING);
             cf.PurgeOldFTR2LOItems = bool.FalseString;
         }
@@ -159,6 +173,7 @@ namespace FTR2LO_Config
                     cf.EarlyStart = cf_tmp.EarlyStart;
                     cf.ServerName = cf_tmp.ServerName;
                     cf.ServerPort = cf_tmp.ServerPort;
+                    cf.RefreshIntervalInMins = cf_tmp.RefreshIntervalInMins;
                     cf.LogLevel = cf_tmp.LogLevel;
                     cf.PurgeOldFTR2LOItems = cf_tmp.PurgeOldFTR2LOItems;
                 }
@@ -198,7 +213,12 @@ namespace FTR2LO_Config
                 cf.ServerPort = cf_default.ServerPort;
                 _updaterequired = true;
             }
-            if(String.IsNullOrEmpty(cf.LogLevel))
+            if (String.IsNullOrEmpty(cf.RefreshIntervalInMins))
+            {
+                cf.RefreshIntervalInMins = cf_default.RefreshIntervalInMins;
+                _updaterequired = true;
+            }
+            if (String.IsNullOrEmpty(cf.LogLevel))
             {
                 cf.LogLevel = cf_default.LogLevel;
                 _updaterequired = true;
